@@ -13,20 +13,25 @@ class MoodTableViewCell: UITableViewCell {
     //MARK: IBOutlets
     @IBOutlet var dateLabel: UILabel!
     
+    
     //MARK: Properties
+    var moodController: MoodModelController?
+    
      var moodTracker: MoodTracker? {
            didSet {
                updateViews()
            }
        }
     
+    
     //MARK: Functions
     func updateViews() {
         guard let moodTracker = moodTracker else { return }
         backgroundColor = UIColor(named: moodTracker.color.rawValue)
-        // TODO: work with the date to put in label
+        dateLabel.text = moodController?.getDate()
     }
 
+    
     //MARK: IBActions
     @IBAction func editButtonTapped(_ sender: Any) {
         

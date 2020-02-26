@@ -10,8 +10,22 @@ import UIKit
 
 class MoodModelController {
     
+    //MARK: - Properties
     var moods: [MoodTracker] = []
     
+    var dateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d yyyy"
+        formatter.timeZone = TimeZone.current
+        return formatter
+    }()
+    
+    init() {
+        loadFromPersistentStore()
+    }
+    
+    
+    //MARK: - CRUD Functions
     func createMood(mood: Mood, comment: String, date: Date, color: moodColor) {
         let newMood = MoodTracker(mood: mood, comment: comment, date: date, color: color)
         
@@ -20,13 +34,17 @@ class MoodModelController {
     }
     
     
-    
-    // MARK: Save, Load from Persistent
-    
-    init(){
-        loadFromPersistentStore()
+    //MARK: - Helper Functions
+    func getDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d yyyy"
+        let currentDate = formatter.string(from: Date())
+        return currentDate
     }
     
+    
+    
+    // MARK: Save, Load from Persistent
     private var persistentFileURL: URL? {
       let fileManager = FileManager.default
       guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
