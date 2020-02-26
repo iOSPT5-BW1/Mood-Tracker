@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Mood: String {
+enum Mood: String, Codable {
     case angry
     case sad
     case happy
@@ -19,7 +19,7 @@ enum Mood: String {
 }
 
 //TODO: - figure out color enum
-enum moodColor: String {
+enum moodColor: String, Codable {
     case angry = "red"
     case sad = "blue"
     case happy = "green"
