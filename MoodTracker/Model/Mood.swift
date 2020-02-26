@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Moods: String {
+enum Mood: String {
     case angry
     case sad
     case happy
@@ -19,7 +19,7 @@ enum Moods: String {
 }
 
 //TODO: - figure out color enum
-enum colors: String {
+enum moodColor: String {
     case angry = "red"
     case sad = "blue"
     case happy = "green"
@@ -28,9 +28,16 @@ enum colors: String {
     case meh = "brown"
 }
 
-struct ModelTracker {
-    var mood: Moods
+struct MoodTracker: Codable {
+    var mood: Mood
     var comment: String
     var date: Date
-    var color: colors
+    var color: moodColor
+    
+    init (mood: Mood, comment: String, date: Date, color: moodColor){
+        self.mood = mood
+        self.comment = comment
+        self.date = date
+        self.color = color
+    }
 }
