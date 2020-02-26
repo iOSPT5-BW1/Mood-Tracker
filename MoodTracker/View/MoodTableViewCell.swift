@@ -9,16 +9,28 @@
 import UIKit
 
 class MoodTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    //MARK: IBOutlets
+    @IBOutlet var dateLabel: UILabel!
+    
+    //MARK: Properties
+     var moodTracker: MoodTracker? {
+           didSet {
+               updateViews()
+           }
+       }
+    
+    //MARK: Functions
+    func updateViews() {
+        guard let moodTracker = moodTracker else { return }
+        backgroundColor = UIColor(named: moodTracker.color.rawValue)
+        // TODO: work with the date to put in label
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    //MARK: IBActions
+    @IBAction func editButtonTapped(_ sender: Any) {
+        
     }
+    
 
 }

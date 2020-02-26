@@ -108,13 +108,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="4bb-IH-jVE" customClass="MoodTableViewCell" customModule="MoodTracker" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoodCell" rowHeight="76" id="4bb-IH-jVE" customClass="MoodTableViewCell" customModule="MoodTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4bb-IH-jVE" id="2XG-n8-7By">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHb-bY-Y4M">
+                                            <rect key="frame" x="30" y="27.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGL-z6-cT9">
+                                            <rect key="frame" x="374" y="11.5" width="30" height="53"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <state key="normal" title="&gt;"/>
+                                            <connections>
+                                                <action selector="editButtonTapped:" destination="4bb-IH-jVE" eventType="touchUpInside" id="flu-cG-Eg9"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="MGL-z6-cT9" secondAttribute="trailing" constant="10" id="H43-Te-Dlm"/>
+                                        <constraint firstItem="MGL-z6-cT9" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="bVJ-99-2qe"/>
+                                        <constraint firstItem="FHb-bY-Y4M" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="s71-OM-nqU"/>
+                                        <constraint firstItem="FHb-bY-Y4M" firstAttribute="leading" secondItem="2XG-n8-7By" secondAttribute="leadingMargin" constant="10" id="xvt-fh-zIo"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="FHb-bY-Y4M" id="IP2-ue-gYm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
