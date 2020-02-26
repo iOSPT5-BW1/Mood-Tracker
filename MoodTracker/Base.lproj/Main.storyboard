@@ -20,7 +20,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="-250"/>
+            <point key="canvasLocation" x="145" y="381"/>
         </scene>
         <!--Quote View Controller-->
         <scene sceneID="pV1-pJ-G0g">
@@ -35,23 +35,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-Kt-veN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="118"/>
+            <point key="canvasLocation" x="99" y="-301"/>
         </scene>
-        <!--Quote-->
+        <!--MoodPicker-->
         <scene sceneID="QVX-WI-9Vh">
             <objects>
-                <viewController id="M4h-fv-Ydm" customClass="MoodPickerViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M4h-fv-Ydm" userLabel="MoodPicker" customClass="MoodPickerViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lPl-TK-Jch">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5rC-g4-fYw">
+                                <rect key="frame" x="59" y="244" width="296.5" height="81.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your mood today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1i-xn-00m">
+                                        <rect key="frame" x="0.0" y="0.0" width="296.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgy-6D-XXI">
+                                        <rect key="frame" x="92" y="57.5" width="112" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-N8-96Y">
+                                <rect key="frame" x="68" y="460" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5rC-g4-fYw" firstAttribute="top" secondItem="fu2-kr-YQ2" secondAttribute="top" constant="200" id="Hwf-no-BVj"/>
+                            <constraint firstItem="5rC-g4-fYw" firstAttribute="centerX" secondItem="lPl-TK-Jch" secondAttribute="centerX" id="t7L-9N-WbY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fu2-kr-YQ2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Quote" id="tyE-8y-DEC"/>
+                    <tabBarItem key="tabBarItem" title="Quote" id="tyE-8y-DEC" userLabel="MoodTracker"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCN-f7-4Ni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-390" y="-250"/>
+            <point key="canvasLocation" x="-810" y="-326"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gRn-BO-OI0">
@@ -69,7 +97,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8d-bX-Vv2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1310" y="74"/>
+            <point key="canvasLocation" x="-1681" y="80"/>
         </scene>
         <!--Tracking-->
         <scene sceneID="XDv-tT-Lxb">
@@ -100,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EtP-Yz-G0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410.14492753623193" y="401.78571428571428"/>
+            <point key="canvasLocation" x="-729" y="396"/>
         </scene>
     </scenes>
 </document>
