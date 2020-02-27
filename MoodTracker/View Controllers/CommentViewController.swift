@@ -36,7 +36,7 @@ class CommentViewController: UIViewController {
         moodController?.createMood(mood: mood, comment: comment, date: date, color: color)
         
         
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
     
     
