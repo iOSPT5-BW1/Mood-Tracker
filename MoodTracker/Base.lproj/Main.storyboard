@@ -12,11 +12,12 @@
             <objects>
                 <viewController id="HVh-JB-716" customClass="MoodDetailViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sKI-Rw-wCv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zez-Hq-3mo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6Xk-RC-YQL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,6 +128,7 @@
                                             <state key="normal" title="&gt;"/>
                                             <connections>
                                                 <action selector="editButtonTapped:" destination="4bb-IH-jVE" eventType="touchUpInside" id="flu-cG-Eg9"/>
+                                                <segue destination="HVh-JB-716" kind="show" identifier="showMoodDetail" id="w6U-AJ-EBA"/>
                                             </connections>
                                         </button>
                                     </subviews>
