@@ -31,10 +31,10 @@ enum moodColor: String, Codable {
 struct MoodTracker: Codable {
     var mood: Mood
     var comment: String
-    var date: Date
+    var date: String
     var color: moodColor
     
-    init (mood: Mood, comment: String, date: Date, color: moodColor){
+    init (mood: Mood, comment: String, date: String, color: moodColor){
         self.mood = mood
         self.comment = comment
         self.date = date

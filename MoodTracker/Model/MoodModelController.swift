@@ -26,7 +26,7 @@ class MoodModelController {
     
     
     //MARK: - CRUD Functions
-    func createMood(mood: Mood, comment: String, date: Date, color: moodColor) {
+    func createMood(mood: Mood, comment: String, date: String, color: moodColor) {
         let newMood = MoodTracker(mood: mood, comment: comment, date: date, color: color)
         
         moods.append(newMood)

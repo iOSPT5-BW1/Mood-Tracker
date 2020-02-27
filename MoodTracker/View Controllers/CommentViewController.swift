@@ -8,17 +8,12 @@
 
 import UIKit
 
-protocol AddCommentDelegate {
-    func commentWasAdded(_ comment: MoodTracker)
-}
-
 class CommentViewController: UIViewController {
     
-    
-
     @IBOutlet weak var commentTextView: UITextView!
     
-    var delegate: AddCommentDelegate?
+    var mood: MoodTracker?
+    var moodController: MoodModelController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,24 +29,24 @@ class CommentViewController: UIViewController {
     
     @IBAction func saveBtnPressed(_ sender: Any) {
         guard let comment = commentTextView.text, !comment.isEmpty else { return }
+        guard let mood = mood?.mood else { return }
+        guard let date = moodController?.getDate() else { return }
+        guard let color = moodColor(rawValue: "red") else { return }
         
-        var moodEntered = MoodTracker(mood: <#T##Mood#>, comment: <#T##String#>, date: <#T##Date#>, color: <#T##moodColor#>)
+        moodController?.createMood(mood: mood, comment: comment, date: date, color: color)
         
-        delegate?.commentWasAdded(moodEntered)
         
         dismiss(animated: true, completion: nil)
     }
     
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
     }
-    */
+    
 
 }

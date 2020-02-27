@@ -1,5 +1,5 @@
 //
-//  MoodDetailViewController.swift
+//  QuoteViewController.swift
 //  MoodTracker
 //
 //  Created by Claudia Contreras on 2/25/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoodDetailViewController: UIViewController {
+class QuoteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
