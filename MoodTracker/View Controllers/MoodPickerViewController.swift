@@ -9,6 +9,10 @@
 import UIKit
 
 class MoodPickerViewController: UIViewController {
+    
+    let moodController = MoodModelController()
+    let date = Date()
+    var moodTracker: MoodTracker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +21,25 @@ class MoodPickerViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func moodButtonPressed(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            moodTracker?.mood = .angry
+        case 2:
+            moodTracker?.mood = .annoyed
+        case 3:
+            moodTracker?.mood = .angry
+        case 4:
+            moodTracker?.mood = .angry
+        case 5:
+            moodTracker?.mood = .angry
+        case 6:
+            moodTracker?.mood = .angry
+        default:
+            print("No mood selected")
+        }
+        performSegue(withIdentifier: "MoodQuoteSegue", sender: sender)
     }
-    */
+    
 
 }
