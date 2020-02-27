@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuoteViewController: UIViewController {
+class CommentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
