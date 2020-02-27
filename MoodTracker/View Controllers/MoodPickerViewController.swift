@@ -9,6 +9,8 @@
 import UIKit
 
 class MoodPickerViewController: UIViewController {
+    
+    let moodController = MoodModelController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,25 @@ class MoodPickerViewController: UIViewController {
     }
     
 
-
+    @IBAction func moodButtonPressed(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            print("Angry")
+        case 2:
+            print("Annoyed")
+        case 3:
+            print("Sad")
+        case 4:
+            print("Meh")
+        case 5:
+            print("Happy")
+        case 6:
+            print("Excited")
+        default:
+            print("No mood selected")
+        }
+        performSegue(withIdentifier: "MoodQuoteSegue", sender: sender)
+    }
+    
 
 }

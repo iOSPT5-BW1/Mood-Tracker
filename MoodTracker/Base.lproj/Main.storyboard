@@ -28,7 +28,7 @@
             <objects>
                 <viewController id="oeI-ql-yea" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VsV-Tl-SHz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wua-HY-8Rd"/>
@@ -69,13 +69,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-MF-RJd" userLabel="Angry">
                                         <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-N8-96Y">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-N8-96Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qj4-N8-96Y" secondAttribute="height" multiplier="1:1" id="Y4q-JY-QNZ"/>
                                                     <constraint firstAttribute="width" secondItem="qj4-N8-96Y" secondAttribute="height" multiplier="1:1" id="Z7p-XW-mPg"/>
                                                 </constraints>
                                                 <state key="normal" image="angry"/>
+                                                <connections>
+                                                    <action selector="moodButtonPressed:" destination="M4h-fv-Ydm" eventType="touchUpInside" id="2hv-cq-p19"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ts6-Bu-Nqw">
                                                 <rect key="frame" x="13.333333333333336" y="55.333333333333307" width="36" height="24.666666666666664"/>
@@ -88,12 +91,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="vbN-Ag-MSB" userLabel="Annoyed">
                                         <rect key="frame" x="62.333333333333329" y="0.0" width="62.333333333333329" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkl-2u-VIw">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkl-2u-VIw">
                                                 <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rkl-2u-VIw" secondAttribute="height" multiplier="1:1" id="laq-WJ-eXr"/>
                                                 </constraints>
                                                 <state key="normal" image="annoyed"/>
+                                                <connections>
+                                                    <action selector="moodButtonPressed:" destination="M4h-fv-Ydm" eventType="touchUpInside" id="Xro-DD-E1J"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annoyed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJP-98-n0X">
                                                 <rect key="frame" x="4.6666666666666714" y="55.333333333333307" width="53.333333333333336" height="24.666666666666664"/>
@@ -106,12 +112,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="wTX-lL-YdV" userLabel="Sad">
                                         <rect key="frame" x="124.66666666666664" y="0.0" width="62.333333333333329" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-dk-UPD">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-dk-UPD">
                                                 <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ak4-dk-UPD" secondAttribute="height" multiplier="1:1" id="8ci-rf-Emr"/>
                                                 </constraints>
                                                 <state key="normal" image="sad"/>
+                                                <connections>
+                                                    <action selector="moodButtonPressed:" destination="M4h-fv-Ydm" eventType="touchUpInside" id="adA-eS-oiw"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQ4-Iz-4A2">
                                                 <rect key="frame" x="19.666666666666686" y="55.333333333333307" width="23.333333333333329" height="24.666666666666664"/>
@@ -124,12 +133,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="z50-83-h8m" userLabel="Meh">
                                         <rect key="frame" x="187" y="0.0" width="62.333333333333343" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-IL-BQh">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-IL-BQh">
                                                 <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BwN-IL-BQh" secondAttribute="height" multiplier="1:1" id="BiK-27-Emb"/>
                                                 </constraints>
                                                 <state key="normal" image="meh"/>
+                                                <connections>
+                                                    <action selector="moodButtonPressed:" destination="M4h-fv-Ydm" eventType="touchUpInside" id="ed8-cm-DOS"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqN-x6-2en">
                                                 <rect key="frame" x="18" y="55.333333333333307" width="26.333333333333329" height="24.666666666666664"/>
@@ -142,12 +154,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="Zwe-pG-lTD" userLabel="Happy">
                                         <rect key="frame" x="249.33333333333334" y="0.0" width="62.333333333333343" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsG-Df-Pjo">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsG-Df-Pjo">
                                                 <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="HsG-Df-Pjo" secondAttribute="height" multiplier="1:1" id="QRr-eP-YPl"/>
                                                 </constraints>
                                                 <state key="normal" image="happy"/>
+                                                <connections>
+                                                    <action selector="moodButtonPressed:" destination="M4h-fv-Ydm" eventType="touchUpInside" id="z5O-yA-TNK"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98y-Nm-JVd">
                                                 <rect key="frame" x="11.666666666666686" y="55.333333333333307" width="39.333333333333336" height="24.666666666666664"/>
@@ -160,12 +175,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-7h-a2a" userLabel="Excited">
                                         <rect key="frame" x="311.66666666666669" y="0.0" width="62.333333333333314" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5P8-Fw-0W0">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5P8-Fw-0W0">
                                                 <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5P8-Fw-0W0" secondAttribute="height" multiplier="1:1" id="8CJ-dA-Q4P"/>
                                                 </constraints>
                                                 <state key="normal" image="excited"/>
+                                                <connections>
+                                                    <action selector="moodButtonPressed:" destination="M4h-fv-Ydm" eventType="touchUpInside" id="kNU-5U-m6w"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTz-Uj-jUN">
                                                 <rect key="frame" x="9" y="55.333333333333307" width="44.333333333333336" height="24.666666666666664"/>
@@ -193,6 +211,9 @@
                         <viewLayoutGuide key="safeArea" id="fu2-kr-YQ2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quote" id="tyE-8y-DEC" userLabel="MoodTracker"/>
+                    <connections>
+                        <segue destination="oeI-ql-yea" kind="presentation" identifier="MoodQuoteSegue" id="Q1e-Rz-aeN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCN-f7-4Ni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
