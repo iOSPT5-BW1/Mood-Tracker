@@ -22,16 +22,70 @@
             </objects>
             <point key="canvasLocation" x="145" y="381"/>
         </scene>
-        <!--Quote View Controller-->
+        <!--Comment View Controller-->
         <scene sceneID="pV1-pJ-G0g">
             <objects>
-                <viewController id="oeI-ql-yea" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oeI-ql-yea" customClass="CommentViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VsV-Tl-SHz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzr-Fb-IOl">
+                                <rect key="frame" x="30" y="384" width="90" height="40"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CAa-B0-jqy"/>
+                                    <constraint firstAttribute="width" constant="90" id="Frc-9F-IuC"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="oeI-ql-yea" eventType="touchUpInside" id="l5b-pO-5Nm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-uo-jPu">
+                                <rect key="frame" x="294" y="384" width="90" height="40"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="4z7-ed-zNX"/>
+                                    <constraint firstAttribute="width" constant="90" id="WC2-iE-HkE"/>
+                                    <constraint firstAttribute="height" constant="40" id="fNU-df-w79"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wGp-bO-y55"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="oeI-ql-yea" eventType="touchUpInside" id="bGv-na-xK3"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What made you feel this way today..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-Dq-ru5">
+                                <rect key="frame" x="30" y="164" width="354" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="QdG-Mu-crr"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cDN-Dq-ru5" firstAttribute="top" secondItem="wua-HY-8Rd" secondAttribute="top" constant="120" id="5vh-6f-yiS"/>
+                            <constraint firstItem="Qzr-Fb-IOl" firstAttribute="leading" secondItem="wua-HY-8Rd" secondAttribute="leading" constant="30" id="62q-k4-dFL"/>
+                            <constraint firstItem="wua-HY-8Rd" firstAttribute="trailing" secondItem="cDN-Dq-ru5" secondAttribute="trailing" constant="30" id="7VG-Nr-StK"/>
+                            <constraint firstItem="wua-HY-8Rd" firstAttribute="trailing" secondItem="aqC-uo-jPu" secondAttribute="trailing" constant="30" id="Gfp-Lv-Wa5"/>
+                            <constraint firstItem="cDN-Dq-ru5" firstAttribute="leading" secondItem="wua-HY-8Rd" secondAttribute="leading" constant="30" id="Osz-Fa-cNN"/>
+                            <constraint firstItem="Qzr-Fb-IOl" firstAttribute="top" secondItem="cDN-Dq-ru5" secondAttribute="bottom" constant="20" id="gF6-Fl-AER"/>
+                            <constraint firstItem="aqC-uo-jPu" firstAttribute="top" secondItem="cDN-Dq-ru5" secondAttribute="bottom" constant="20" id="iWs-GY-dDX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wua-HY-8Rd"/>
                     </view>
+                    <connections>
+                        <outlet property="commentTextView" destination="cDN-Dq-ru5" id="lm6-Cg-fAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-Kt-veN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
