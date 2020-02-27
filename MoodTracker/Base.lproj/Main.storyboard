@@ -7,32 +7,139 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mood Detail View Controller-->
+        <!--Quote View Controller-->
         <scene sceneID="KID-Bz-Hwk">
             <objects>
-                <viewController id="HVh-JB-716" customClass="MoodDetailViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HVh-JB-716" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sKI-Rw-wCv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="relax-6" translatesAutoresizingMaskIntoConstraints="NO" id="BDH-6S-0xk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have felt this mood 4 times this week. Here's a little motivational quote." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG2-Sj-hPh">
+                                <rect key="frame" x="30" y="114" width="354" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Kxb-4b-cjG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGA-lx-s3H">
+                                <rect key="frame" x="40" y="680" width="100" height="40"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NOG-oM-TzO"/>
+                                    <constraint firstAttribute="width" constant="100" id="W5E-5b-97E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Tracking">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Just when the caterpillar thought the world was ending, he turned into a butterfly.&quot; - Proverb" translatesAutoresizingMaskIntoConstraints="NO" id="gzu-d4-pGb">
+                                <rect key="frame" x="30" y="234" width="354" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="jHp-2s-5DD"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XGA-lx-s3H" firstAttribute="leading" secondItem="zez-Hq-3mo" secondAttribute="leading" constant="40" id="3db-z8-WWd"/>
+                            <constraint firstItem="zez-Hq-3mo" firstAttribute="bottom" secondItem="BDH-6S-0xk" secondAttribute="bottom" id="7sE-Xr-mLE"/>
+                            <constraint firstItem="zez-Hq-3mo" firstAttribute="trailing" secondItem="gzu-d4-pGb" secondAttribute="trailing" constant="30" id="F4B-KL-WLY"/>
+                            <constraint firstItem="BDH-6S-0xk" firstAttribute="top" secondItem="zez-Hq-3mo" secondAttribute="top" id="KQH-re-a3y"/>
+                            <constraint firstItem="gzu-d4-pGb" firstAttribute="top" secondItem="ZG2-Sj-hPh" secondAttribute="bottom" constant="60" id="M2u-ou-evZ"/>
+                            <constraint firstItem="gzu-d4-pGb" firstAttribute="leading" secondItem="zez-Hq-3mo" secondAttribute="leading" constant="30" id="kxu-3j-9IA"/>
+                            <constraint firstItem="BDH-6S-0xk" firstAttribute="leading" secondItem="zez-Hq-3mo" secondAttribute="leading" id="mQC-CZ-N5I"/>
+                            <constraint firstItem="ZG2-Sj-hPh" firstAttribute="top" secondItem="zez-Hq-3mo" secondAttribute="top" constant="70" id="rli-Cy-sdQ"/>
+                            <constraint firstItem="zez-Hq-3mo" firstAttribute="trailing" secondItem="BDH-6S-0xk" secondAttribute="trailing" id="siX-BA-evG"/>
+                            <constraint firstItem="XGA-lx-s3H" firstAttribute="top" secondItem="gzu-d4-pGb" secondAttribute="bottom" constant="96" id="t7z-9s-sMR"/>
+                            <constraint firstItem="zez-Hq-3mo" firstAttribute="trailing" secondItem="ZG2-Sj-hPh" secondAttribute="trailing" constant="30" id="tLy-Bn-gTd"/>
+                            <constraint firstItem="ZG2-Sj-hPh" firstAttribute="leading" secondItem="zez-Hq-3mo" secondAttribute="leading" constant="30" id="ztL-Sd-viC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zez-Hq-3mo"/>
                     </view>
+
+                
+
                     <navigationItem key="navigationItem" id="6Xk-RC-YQL"/>
+
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="381"/>
+            <point key="canvasLocation" x="449" y="396"/>
         </scene>
-        <!--Quote View Controller-->
+        <!--Comment View Controller-->
         <scene sceneID="pV1-pJ-G0g">
             <objects>
-                <viewController id="oeI-ql-yea" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oeI-ql-yea" customClass="CommentViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VsV-Tl-SHz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzr-Fb-IOl">
+                                <rect key="frame" x="30" y="384" width="90" height="40"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CAa-B0-jqy"/>
+                                    <constraint firstAttribute="width" constant="90" id="Frc-9F-IuC"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="oeI-ql-yea" eventType="touchUpInside" id="l5b-pO-5Nm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-uo-jPu">
+                                <rect key="frame" x="294" y="384" width="90" height="40"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="4z7-ed-zNX"/>
+                                    <constraint firstAttribute="width" constant="90" id="WC2-iE-HkE"/>
+                                    <constraint firstAttribute="height" constant="40" id="fNU-df-w79"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wGp-bO-y55"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="oeI-ql-yea" eventType="touchUpInside" id="bGv-na-xK3"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What made you feel this way today..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-Dq-ru5">
+                                <rect key="frame" x="30" y="164" width="354" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="QdG-Mu-crr"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cDN-Dq-ru5" firstAttribute="top" secondItem="wua-HY-8Rd" secondAttribute="top" constant="120" id="5vh-6f-yiS"/>
+                            <constraint firstItem="Qzr-Fb-IOl" firstAttribute="leading" secondItem="wua-HY-8Rd" secondAttribute="leading" constant="30" id="62q-k4-dFL"/>
+                            <constraint firstItem="wua-HY-8Rd" firstAttribute="trailing" secondItem="cDN-Dq-ru5" secondAttribute="trailing" constant="30" id="7VG-Nr-StK"/>
+                            <constraint firstItem="wua-HY-8Rd" firstAttribute="trailing" secondItem="aqC-uo-jPu" secondAttribute="trailing" constant="30" id="Gfp-Lv-Wa5"/>
+                            <constraint firstItem="cDN-Dq-ru5" firstAttribute="leading" secondItem="wua-HY-8Rd" secondAttribute="leading" constant="30" id="Osz-Fa-cNN"/>
+                            <constraint firstItem="Qzr-Fb-IOl" firstAttribute="top" secondItem="cDN-Dq-ru5" secondAttribute="bottom" constant="20" id="gF6-Fl-AER"/>
+                            <constraint firstItem="aqC-uo-jPu" firstAttribute="top" secondItem="cDN-Dq-ru5" secondAttribute="bottom" constant="20" id="iWs-GY-dDX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wua-HY-8Rd"/>
                     </view>
+                    <connections>
+                        <outlet property="commentTextView" destination="cDN-Dq-ru5" id="lm6-Cg-fAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-Kt-veN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,6 +403,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="relax-6" width="5760" height="3840"/>
         <image name="angry" width="96" height="96"/>
         <image name="annoyed" width="96" height="96"/>
         <image name="excited" width="96" height="96"/>
