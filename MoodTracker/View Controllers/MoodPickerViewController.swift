@@ -11,6 +11,8 @@ import UIKit
 class MoodPickerViewController: UIViewController {
     
     let moodController = MoodModelController()
+    let date = Date()
+    var moodTracker: MoodTracker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +24,17 @@ class MoodPickerViewController: UIViewController {
     @IBAction func moodButtonPressed(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            print("Angry")
+            moodTracker?.mood = .angry
         case 2:
-            print("Annoyed")
+            moodTracker?.mood = .annoyed
         case 3:
-            print("Sad")
+            moodTracker?.mood = .angry
         case 4:
-            print("Meh")
+            moodTracker?.mood = .angry
         case 5:
-            print("Happy")
+            moodTracker?.mood = .angry
         case 6:
-            print("Excited")
+            moodTracker?.mood = .angry
         default:
             print("No mood selected")
         }

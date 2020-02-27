@@ -20,6 +20,7 @@
 		3AB187D7240620C300004A1F /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB187D6240620C300004A1F /* Mood.swift */; };
 		AF5840AE2406261500952E73 /* QuotesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5840AD2406261500952E73 /* QuotesArray.swift */; };
 		AF5840B02406278500952E73 /* MoodModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5840AF2406278500952E73 /* MoodModelController.swift */; };
+		C978F60724076D9D0079DF6D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978F60624076D9D0079DF6D /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3AB187D6240620C300004A1F /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		AF5840AD2406261500952E73 /* QuotesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesArray.swift; sourceTree = "<group>"; };
 		AF5840AF2406278500952E73 /* MoodModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodModelController.swift; path = MoodTracker/Model/MoodModelController.swift; sourceTree = SOURCE_ROOT; };
+		C978F60624076D9D0079DF6D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				3AB187D6240620C300004A1F /* Mood.swift */,
 				AF5840AD2406261500952E73 /* QuotesArray.swift */,
+				C978F60624076D9D0079DF6D /* Colors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A633A632404D479001949D8 /* AppDelegate.swift in Sources */,
+				C978F60724076D9D0079DF6D /* Colors.swift in Sources */,
 				3A633A7C2405FEAE001949D8 /* MoodPickerViewController.swift in Sources */,
 				3A633A822405FEEC001949D8 /* MoodTableViewController.swift in Sources */,
 				3A633A7E2405FEC6001949D8 /* MoodDetailViewController.swift in Sources */,
