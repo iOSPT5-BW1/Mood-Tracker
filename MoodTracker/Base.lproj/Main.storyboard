@@ -156,6 +156,9 @@
                         <viewLayoutGuide key="safeArea" id="wua-HY-8Rd"/>
                     </view>
                     <navigationItem key="navigationItem" id="nwo-lf-RM9"/>
+                    <connections>
+                        <outlet property="commentTextView" destination="sJN-7d-BaR" id="RoQ-nd-S8A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-Kt-veN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -429,6 +432,7 @@
         <image name="sad" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="1ja-7o-T1f"/>
         <segue reference="lK4-MU-MGF"/>
         <segue reference="7q0-kb-Ceg"/>
     </inferredMetricsTieBreakers>

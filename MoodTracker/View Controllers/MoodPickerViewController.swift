@@ -46,7 +46,7 @@ class MoodPickerViewController: UIViewController {
     
     func navigateToCommentVC(with mood: Mood) {
         //create intance of next VC
-        let addCommentVC = QuoteViewController()
+        let addCommentVC = CommentViewController()
         //pass mood to next VC
         addCommentVC.mood = mood
         //present next VC
