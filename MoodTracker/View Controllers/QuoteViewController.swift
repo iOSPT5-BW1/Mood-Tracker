@@ -9,6 +9,8 @@
 import UIKit
 
 class QuoteViewController: UIViewController {
+    
+    var mood: Mood?
 
     override func viewDidLoad() {
         super.viewDidLoad()

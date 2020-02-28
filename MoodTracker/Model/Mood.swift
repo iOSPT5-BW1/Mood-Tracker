@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Mood: String, Codable {
+enum EmotionState: String, Codable {
     case angry
     case sad
     case happy
@@ -27,18 +27,9 @@ enum Color: String, Codable {
     case excitedColor = "excitedColor"
 }
 
-struct MoodTracker: Codable {
-    var mood: Mood
-    let comment: String
-    let date: Date
-    let color: Color
-    
-    init (mood: Mood, comment: String, date: Date, color: Color){
-        self.mood = mood
-        self.comment = comment
-        self.date = date
-        self.color = color
-    }
+struct Emotion: Codable {
+    var state: EmotionState
+    var color: Color
     
     //Use this computed property when you want to GET and USE the color i.e. tableView, etc.
     var moodColor: UIColor {
@@ -58,3 +49,25 @@ struct MoodTracker: Codable {
         }
     }
 }
+
+struct Mood: Codable {
+    let emotion: Emotion
+    let comment: String?
+    let date: Date
+    
+    init (emotion: Emotion, comment: String?, date: Date){
+        self.emotion = emotion
+        self.comment = comment
+        self.date = date
+    }
+    
+    var dateString: String {
+        dateFormatter.string(from: date)
+    }
+}
+
+let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .full
+    return formatter
+}()

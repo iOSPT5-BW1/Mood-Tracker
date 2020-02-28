@@ -12,7 +12,6 @@ class MoodPickerViewController: UIViewController {
     
     let moodController = MoodModelController()
     let date = Date()
-    var moodTracker: MoodTracker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +23,34 @@ class MoodPickerViewController: UIViewController {
     @IBAction func moodButtonPressed(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            moodTracker?.mood = .angry
+            createMood(with: Emotion(state: .angry, color: .angryColor))
         case 2:
-            moodTracker?.mood = .annoyed
+            createMood(with: Emotion(state: .annoyed, color: .annoyedColor))
         case 3:
-            moodTracker?.mood = .angry
+            createMood(with: Emotion(state: .sad, color: .sadColor))
         case 4:
-            moodTracker?.mood = .angry
+            createMood(with: Emotion(state: .meh, color: .mehColor))
         case 5:
-            moodTracker?.mood = .angry
+            createMood(with: Emotion(state: .happy, color: .happyColor))
         case 6:
-            moodTracker?.mood = .angry
+            createMood(with: Emotion(state: .excited, color: .excitedColor))
         default:
             print("No mood selected")
         }
-        performSegue(withIdentifier: "MoodQuoteSegue", sender: sender)
     }
     
+    func createMood(with emotion: Emotion) {
+        let newMood = Mood(emotion: emotion, comment: nil, date: date)
+        navigateToCommentVC(with: newMood)
+    }
+    
+    func navigateToCommentVC(with mood: Mood) {
+        //create intance of next VC
+        let addCommentVC = QuoteViewController()
+        //pass mood to next VC
+        addCommentVC.mood = mood
+        //present next VC
+        present(addCommentVC, animated: true, completion: nil)
+    }
 
 }
