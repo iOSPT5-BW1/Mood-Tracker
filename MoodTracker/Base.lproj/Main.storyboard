@@ -319,7 +319,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Quote" id="tyE-8y-DEC" userLabel="MoodTracker"/>
                     <connections>
-                        <segue destination="oeI-ql-yea" kind="presentation" identifier="MoodQuoteSegue" id="Q1e-Rz-aeN"/>
+                        <segue destination="oeI-ql-yea" kind="presentation" identifier="MoodCommentSegue" id="Q1e-Rz-aeN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCN-f7-4Ni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
