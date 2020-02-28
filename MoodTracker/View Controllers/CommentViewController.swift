@@ -12,8 +12,8 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     
-    var mood: MoodTracker?
-    var moodController: MoodModelController?
+    var mood: Mood?
+    var moodController = MoodModelController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +28,11 @@ class CommentViewController: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
-        guard let comment = commentTextView.text, !comment.isEmpty else { return }
-        guard let mood = mood?.mood else { return }
-        guard let date = moodController?.getDate() else { return }
-        guard let color = moodColor(rawValue: "red") else { return }
-        
-        moodController?.createMood(mood: mood, comment: comment, date: date, color: color)
-        
-        
-        //dismiss(animated: true, completion: nil)
+        if let newComment = commentTextView.text,
+        let emotion = mood?.emotion,
+            let date = mood?.date {
+            moodController.createMood(emotion: emotion, comment: newComment, date: date, color: emotion.color)
+        }
     }
     
     
