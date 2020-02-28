@@ -11,7 +11,7 @@ import UIKit
 class MoodModelController {
     
     //MARK: - Properties
-    var moods: [MoodTracker] = []
+    var moods: [Mood] = []
     
     var dateFormatter: DateFormatter = {
        let formatter = DateFormatter()
@@ -27,9 +27,9 @@ class MoodModelController {
     
     //MARK: - CRUD Functions
 
-    func createMood(mood: Mood, comment: String?, date: Date, color: Color) {
+    func createMood(emotion: Emotion, comment: String?, date: Date, color: Color) {
 
-        let newMood = MoodTracker(mood: mood, comment: comment, date: date, color: color)
+        let newMood = Mood(emotion: emotion, comment: nil, date: date)
         
         moods.append(newMood)
         saveToPersistentStore()
@@ -78,7 +78,7 @@ class MoodModelController {
         do {
             let data = try Data(contentsOf: url)
             let decoder = PropertyListDecoder()
-            moods = try decoder.decode([MoodTracker].self, from: data)
+            moods = try decoder.decode([Mood].self, from: data)
         } catch {
             print("error loading stars data: \(error)")
         }
