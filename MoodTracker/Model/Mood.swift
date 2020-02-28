@@ -30,6 +30,7 @@ enum Color: String, Codable {
 struct Emotion: Codable {
     var state: EmotionState
     var color: Color
+
     
     //Use this computed property when you want to GET and USE the color i.e. tableView, etc.
     var moodColor: UIColor {
