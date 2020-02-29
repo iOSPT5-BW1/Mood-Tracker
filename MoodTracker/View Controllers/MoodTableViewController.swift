@@ -26,7 +26,7 @@ class MoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoodCell", for: indexPath) as? MoodTableViewCell else { return UITableViewCell() }
         let mood = moodModelController.moods[indexPath.row]
-        //cell.moodTracker = mood
+        cell.mood = mood
         return cell
     }
     
