@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="-373"/>
+            <point key="canvasLocation" x="25" y="276"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="pV1-pJ-G0g">
@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-Kt-veN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-864" y="-28"/>
+            <point key="canvasLocation" x="-836" y="276"/>
         </scene>
         <!--MoodPicker-->
         <scene sceneID="QVX-WI-9Vh">
@@ -369,7 +369,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EtP-Yz-G0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="329"/>
+            <point key="canvasLocation" x="-1793" y="706"/>
         </scene>
     </scenes>
     <resources>
