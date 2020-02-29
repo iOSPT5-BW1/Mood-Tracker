@@ -29,7 +29,7 @@ struct QuoteRequest {
                 if let data = data {
                     do {
                         let json = try JSONDecoder().decode([Quote].self, from: data) as [Quote]
-                        print(json)
+
                         let Quote = json
                         completion(.success(Quote))
                     } catch {

@@ -28,7 +28,7 @@ class MoodTableViewCell: UITableViewCell {
     func updateViews() {
         guard let mood = mood else { return }
         backgroundColor = mood.emotion.moodColor
-        dateLabel.text = moodController?.getDate()
+        dateLabel.text = mood.dateString
     }
 
     
