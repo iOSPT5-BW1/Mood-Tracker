@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Quote: Codable {
-    let title, author: String
+    let id, title, author: String
     let url: String
     let media: String
     let cat: String
