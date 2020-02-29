@@ -10,6 +10,7 @@ import UIKit
 
 class MoodTableViewController: UITableViewController {
     var moodModelController = MoodModelController()
+    var mood: Mood?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,28 +27,23 @@ class MoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoodCell", for: indexPath) as? MoodTableViewCell else { return UITableViewCell() }
         let mood = moodModelController.moods[indexPath.row]
-        //cell.moodTracker = mood
+        cell.mood = mood
         return cell
     }
     
 
     
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMoodDetail" {
-            let editMoodVC = segue.destination as! QuoteViewController
-            //TODO: Need to connect either the controller or the mood to the detailViewController
+            if let indexPath = tableView.indexPathForSelectedRow,
+                let editMoodVC = segue.destination as? CommentViewController {
+                editMoodVC.mood = mood
+                let mood = moodModelController.moods[indexPath.row]
+                //Not sure if we are going to need the specific mood we are selecting
+                
+            }
         }
-//            addBookVC.bookController = bookController
-//
-//        } else if segue.identifier == "showBookSegue" {
-//            if let indexPath = tableView.indexPathForSelectedRow,
-//            let showDetailVC = segue.destination as? BookDetailViewController {
-//                showDetailVC.bookController = bookController
-//                showDetailVC.book = bookFor(indexPath: indexPath)
-//            }
-//        }
     }
     
 
