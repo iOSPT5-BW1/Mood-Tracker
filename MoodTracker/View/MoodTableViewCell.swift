@@ -17,7 +17,7 @@ class MoodTableViewCell: UITableViewCell {
     //MARK: Properties
     var moodController: MoodModelController?
     
-     var moodTracker: MoodTracker? {
+     var mood: Mood? {
            didSet {
                updateViews()
            }
@@ -26,8 +26,8 @@ class MoodTableViewCell: UITableViewCell {
     
     //MARK: Functions
     func updateViews() {
-        guard let moodTracker = moodTracker else { return }
-        backgroundColor = UIColor(named: moodTracker.color.rawValue)
+        guard let mood = mood else { return }
+        backgroundColor = mood.emotion.moodColor
         dateLabel.text = moodController?.getDate()
     }
 

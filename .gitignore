@@ -50,6 +50,7 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+MoodTracker/Resources/APIKey.swift
 ## Obj-C/Swift specific
 *.hmap
 *.ipa

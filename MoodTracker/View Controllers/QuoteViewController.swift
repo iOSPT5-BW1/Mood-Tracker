@@ -6,27 +6,52 @@
 //  Copyright © 2020 thecoderpilot. All rights reserved.
 //
 
+
 import UIKit
 
 class QuoteViewController: UIViewController {
-    
-    var mood: Mood?
 
+    @IBOutlet var imageView: UIImageView!
+    
+    var quote = [Quote]() {
+        didSet {
+               let url = URL(string: self.quote[0].media)
+               self.imageView.downloadImage(from: url!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let quoteRequest = QuoteRequest()
+        quoteRequest.getQuote {[weak self] result in
+            switch result {
+            case.success(let quotes):
+                self?.quote = quotes
+                print(self!.quote)
+            case.failure(let error):
+                print(error)
+            }
+            
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//MARK: - Extension
+extension UIImageView {
+   func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+      URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+   }
+   func downloadImage(from url: URL) {
+      getData(from: url) {
+         data, response, error in
+         guard let data = data, error == nil else {
+            return
+         }
+         DispatchQueue.main.async() {
+            self.image = UIImage(data: data)
+         }
+      }
+   }
 }

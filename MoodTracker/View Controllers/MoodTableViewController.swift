@@ -26,7 +26,7 @@ class MoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoodCell", for: indexPath) as? MoodTableViewCell else { return UITableViewCell() }
         let mood = moodModelController.moods[indexPath.row]
-        cell.moodTracker = mood
+        //cell.moodTracker = mood
         return cell
     }
     
@@ -36,7 +36,7 @@ class MoodTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMoodDetail" {
-            let editMoodVC = segue.destination as! MoodDetailViewController
+            let editMoodVC = segue.destination as! QuoteViewController
             //TODO: Need to connect either the controller or the mood to the detailViewController
         }
 //            addBookVC.bookController = bookController
