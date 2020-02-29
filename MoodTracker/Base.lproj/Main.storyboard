@@ -73,6 +73,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveBtnPressed:" destination="oeI-ql-yea" eventType="touchUpInside" id="bGv-na-xK3"/>
+                                    <segue destination="udL-Dy-zdq" kind="show" identifier="MoodTableViewSegue" id="TEn-XU-kSk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What made you feel this way today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXQ-sK-Nmz">
@@ -319,7 +320,7 @@
             <objects>
                 <tableViewController id="udL-Dy-zdq" customClass="MoodTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6kP-Ec-Es6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -381,6 +382,7 @@
         <image name="sad" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7q0-kb-Ceg"/>
+        <segue reference="TEn-XU-kSk"/>
+        <segue reference="Q1e-Rz-aeN"/>
     </inferredMetricsTieBreakers>
 </document>
