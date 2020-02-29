@@ -16,15 +16,15 @@ class CommentViewController: UIViewController {
     var mood: Mood?
     var moodController: MoodModelController?
     
-//    init?(coder: NSCoder, mood: Mood, moodController: MoodModelController) {
-//        self.mood = mood
-//        self.moodController = moodController
-//        super.init(coder: coder)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("must create VC with a mood")
-//    }
+    init?(coder: NSCoder, mood: Mood, moodController: MoodModelController) {
+        self.mood = mood
+        self.moodController = moodController
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("must create VC with a mood")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +44,8 @@ class CommentViewController: UIViewController {
         if let emotion = mood?.emotion,
             let date = mood?.date {
             moodController?.createMood(emotion: emotion, comment: comment, date: date, color: emotion.color)
-            print(mood)
         }
     }
-    
-    
-
     
     // MARK: - Navigation
 
