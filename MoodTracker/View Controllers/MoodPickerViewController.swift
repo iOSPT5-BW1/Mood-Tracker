@@ -43,14 +43,15 @@ class MoodPickerViewController: UIViewController {
         let newMood = Mood(emotion: emotion, comment: nil, date: date)
         navigateToCommentVC(with: newMood)
     }
-    
+
     func navigateToCommentVC(with mood: Mood) {
         //create intance of next VC
         let addCommentVC = CommentViewController()
         //pass mood to next VC
         addCommentVC.mood = mood
         //present next VC
-        present(addCommentVC, animated: true, completion: nil)
+        //present(addCommentVC, animated: true, completion: nil)
+        performSegue(withIdentifier: "MoodCommentSegue", sender: self)
     }
 
 }

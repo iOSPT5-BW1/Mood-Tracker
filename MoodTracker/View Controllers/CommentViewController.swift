@@ -33,6 +33,8 @@ class CommentViewController: UIViewController {
             let date = mood?.date {
             moodController.createMood(emotion: emotion, comment: newComment, date: date, color: emotion.color)
         }
+        present(MoodTableViewController(), animated: true, completion: nil)
+        //performSegue(withIdentifier: "MoodTableViewSegue", sender: self)
     }
     
     
