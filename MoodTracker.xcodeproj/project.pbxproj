@@ -22,7 +22,7 @@
 		3AB187D7240620C300004A1F /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB187D6240620C300004A1F /* Mood.swift */; };
 		AF5840AE2406261500952E73 /* QuotesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5840AD2406261500952E73 /* QuotesArray.swift */; };
 		AF5840B02406278500952E73 /* MoodModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5840AF2406278500952E73 /* MoodModelController.swift */; };
-		AFFADBDC240A2453007300EF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFADBDB240A2453007300EF /* APIKey.swift */; };
+		C92F55FD240B1FDA007DBB13 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F55FC240B1FDA007DBB13 /* APIKey.swift */; };
 		C978F60724076D9D0079DF6D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978F60624076D9D0079DF6D /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		3AB187D6240620C300004A1F /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		AF5840AD2406261500952E73 /* QuotesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesArray.swift; sourceTree = "<group>"; };
 		AF5840AF2406278500952E73 /* MoodModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodModelController.swift; path = MoodTracker/Model/MoodModelController.swift; sourceTree = SOURCE_ROOT; };
-		AFFADBDB240A2453007300EF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		C92F55FC240B1FDA007DBB13 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		C978F60624076D9D0079DF6D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +120,7 @@
 		3A633A792405FC65001949D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AFFADBDB240A2453007300EF /* APIKey.swift */,
+				C92F55FC240B1FDA007DBB13 /* APIKey.swift */,
 				3A633A622404D479001949D8 /* AppDelegate.swift */,
 				3A633A642404D479001949D8 /* SceneDelegate.swift */,
 				3A633A6B2404D47B001949D8 /* Assets.xcassets */,
@@ -219,7 +219,7 @@
 				AF5840B02406278500952E73 /* MoodModelController.swift in Sources */,
 				3AB187D7240620C300004A1F /* Mood.swift in Sources */,
 				AF5840AE2406261500952E73 /* QuotesArray.swift in Sources */,
-				AFFADBDC240A2453007300EF /* APIKey.swift in Sources */,
+				C92F55FD240B1FDA007DBB13 /* APIKey.swift in Sources */,
 				3A633A652404D479001949D8 /* SceneDelegate.swift in Sources */,
 				3A27FD55240A112400960722 /* QuoteRequest.swift in Sources */,
 				3A27FD53240A10F800960722 /* QuoteAPI.swift in Sources */,

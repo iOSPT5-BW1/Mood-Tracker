@@ -46,21 +46,21 @@ class MoodPickerViewController: UIViewController {
         navigateToCommentVC(with: newMood)
     }
     
-    func navigateToCommentVC(with mood: Mood) {
-        //create intance of next VC
-        let addCommentVC = CommentViewController()
-        //pass mood to next VC
-        addCommentVC.mood = mood
-        //present next VC
-        //present(addCommentVC, animated: true, completion: nil)
-        performSegue(withIdentifier: "MoodCommentSegue", sender: self)
-    }
-
 //    func navigateToCommentVC(with mood: Mood) {
-//        guard let commentVC = storyboard?.instantiateViewController(identifier: "CommentViewController", creator: { coder in
-//            return CommentViewController(coder: coder, mood: mood, moodController: self.moodController)
-//        }) else { fatalError("failed to load commentVC from storyboard")}
-//        navigationController?.pushViewController(commentVC, animated: true)
+//        //create intance of next VC
+//        let addCommentVC = CommentViewController()
+//        //pass mood to next VC
+//        addCommentVC.mood = mood
+//        //present next VC
+//        //present(addCommentVC, animated: true, completion: nil)
+//        performSegue(withIdentifier: "MoodCommentSegue", sender: self)
 //    }
+
+    func navigateToCommentVC(with mood: Mood) {
+        guard let commentVC = storyboard?.instantiateViewController(identifier: "CommentViewController", creator: { coder in
+            return CommentViewController(coder: coder, mood: mood, moodController: self.moodController)
+        }) else { fatalError("failed to load commentVC from storyboard")}
+        navigationController?.pushViewController(commentVC, animated: true)
+    }
 
 }
