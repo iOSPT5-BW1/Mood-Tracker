@@ -10,6 +10,8 @@
 import UIKit
 
 class QuoteViewController: UIViewController {
+    var mood: Mood?
+    var moodController: MoodModelController?
 
     @IBOutlet var imageView: UIImageView!
     
@@ -35,6 +37,11 @@ class QuoteViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func trackingBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
 
