@@ -133,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				3A633A7B2405FEAE001949D8 /* MoodPickerViewController.swift */,
-				3A633A7D2405FEC6001949D8 /* QuoteViewController.swift */,
 				3A633A7F2405FED5001949D8 /* CommentViewController.swift */,
+				3A633A7D2405FEC6001949D8 /* QuoteViewController.swift */,
 				3A633A812405FEEC001949D8 /* MoodTableViewController.swift */,
 			);
 			path = "View Controllers";

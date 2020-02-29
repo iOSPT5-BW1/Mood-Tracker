@@ -12,13 +12,24 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     
+    
     var mood: Mood?
-    var moodController = MoodModelController()
+    var moodController: MoodModelController?
+    
+//    init?(coder: NSCoder, mood: Mood, moodController: MoodModelController) {
+//        self.mood = mood
+//        self.moodController = moodController
+//        super.init(coder: coder)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("must create VC with a mood")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        print(mood)
+//        print(mood.emotion)
     }
     
     // MARK: IBActions
@@ -28,13 +39,13 @@ class CommentViewController: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
-        if let newComment = commentTextView.text,
-        let emotion = mood?.emotion,
+        
+        let comment = commentTextView!.text ?? ""
+        if let emotion = mood?.emotion,
             let date = mood?.date {
-            moodController.createMood(emotion: emotion, comment: newComment, date: date, color: emotion.color)
+            moodController?.createMood(emotion: emotion, comment: comment, date: date, color: emotion.color)
+            print(mood)
         }
-        present(MoodTableViewController(), animated: true, completion: nil)
-        //performSegue(withIdentifier: "MoodTableViewSegue", sender: self)
     }
     
     
@@ -43,7 +54,10 @@ class CommentViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if segue.identifier == "CommentQuoteSegue" {
+            guard let quoteVC = segue.destination as? QuoteViewController else { return }
+            quoteVC.mood = mood
+        }
     }
     
 
