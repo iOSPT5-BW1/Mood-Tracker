@@ -35,6 +35,17 @@ class MoodModelController {
         saveToPersistentStore()
     }
     
+    func deleteMood(moodToDelete: Mood) {
+        if let mood = moods.first(where: {$0.date == moodToDelete.date}) {
+            if let index = moods.firstIndex(of: mood) {
+                moods.remove(at: index)
+            } else {
+                print ("mood could not be found")
+            }
+            saveToPersistentStore()
+        }
+    }
+    
     
     //MARK: - Helper Functions
     func getDate() -> String {

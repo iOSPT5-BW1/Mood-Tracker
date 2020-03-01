@@ -36,9 +36,16 @@ class MoodTableViewController: UITableViewController {
         let mood = moodModelController.moods[indexPath.row]
         cell.mood = mood
         return cell
-        
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let mood = moodModelController.moods[indexPath.row]
+            moodModelController.deleteMood(moodToDelete: mood)
+
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 
     
     // MARK: - Navigation
