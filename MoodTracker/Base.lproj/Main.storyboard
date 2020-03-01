@@ -19,10 +19,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="525"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-lh-ZGQ">
-                                <rect key="frame" x="284" y="664" width="90" height="40"/>
+                                <rect key="frame" x="315" y="664" width="59" height="40"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="fee-1S-OFt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="fee-1S-OFt"/>
                                     <constraint firstAttribute="height" constant="40" id="zl7-bK-YY1"/>
                                 </constraints>
                                 <state key="normal" title="Tracking">
@@ -41,6 +41,7 @@
                             <constraint firstItem="zez-Hq-3mo" firstAttribute="bottom" secondItem="Bdn-Ac-I0d" secondAttribute="bottom" constant="200" id="OfJ-sd-4Si"/>
                             <constraint firstItem="Bdn-Ac-I0d" firstAttribute="leading" secondItem="zez-Hq-3mo" secondAttribute="leading" id="Uke-Oy-ixB"/>
                             <constraint firstItem="zez-Hq-3mo" firstAttribute="trailing" secondItem="Bdn-Ac-I0d" secondAttribute="trailing" id="VYe-Ss-oUv"/>
+                            <constraint firstItem="Wsw-lh-ZGQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zez-Hq-3mo" secondAttribute="leading" symbolic="YES" id="a1e-GK-hdV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zez-Hq-3mo"/>
                     </view>
@@ -89,7 +90,7 @@
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="CAa-B0-jqy"/>
-                                                    <constraint firstAttribute="width" constant="90" id="Frc-9F-IuC"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Frc-9F-IuC"/>
                                                 </constraints>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,7 +104,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="4z7-ed-zNX"/>
-                                                    <constraint firstAttribute="width" constant="90" id="WC2-iE-HkE"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="WC2-iE-HkE"/>
                                                     <constraint firstAttribute="height" constant="40" id="fNU-df-w79"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wGp-bO-y55"/>
                                                 </constraints>
@@ -363,8 +364,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="FHb-bY-Y4M" secondAttribute="trailing" constant="311" id="cLd-od-yL4"/>
                                         <constraint firstItem="FHb-bY-Y4M" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="s71-OM-nqU"/>
-                                        <constraint firstItem="FHb-bY-Y4M" firstAttribute="leading" secondItem="2XG-n8-7By" secondAttribute="leadingMargin" constant="10" id="xvt-fh-zIo"/>
+                                        <constraint firstItem="FHb-bY-Y4M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2XG-n8-7By" secondAttribute="leadingMargin" id="xvt-fh-zIo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

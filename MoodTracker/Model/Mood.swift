@@ -51,7 +51,8 @@ struct Emotion: Codable {
     }
 }
 
-struct Mood: Codable {
+struct Mood: Codable, Equatable {
+    
     let emotion: Emotion
     let comment: String?
     let date: Date
@@ -64,6 +65,14 @@ struct Mood: Codable {
     
     var dateString: String {
         dateFormatter.string(from: date)
+    }
+    
+    static func == (lhs: Mood, rhs: Mood) -> Bool {
+        if lhs.date == rhs.date {
+            return true
+        } else {
+            return false
+        }
     }
 }
 

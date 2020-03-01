@@ -36,20 +36,25 @@ class MoodTableViewController: UITableViewController {
         let mood = moodModelController.moods[indexPath.row]
         cell.mood = mood
         return cell
-        
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let mood = moodModelController.moods[indexPath.row]
+            moodModelController.deleteMood(moodToDelete: mood)
+
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 
     
     // MARK: - Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showMoodDetail" {
+//        if segue.identifier == "TrackingCommentSegue" {
 //            if let indexPath = tableView.indexPathForSelectedRow,
 //                let editMoodVC = segue.destination as? CommentViewController {
-//                editMoodVC.mood = mood
 //                let mood = moodModelController.moods[indexPath.row]
-//                //Not sure if we are going to need the specific mood we are selecting
-//
+//                editMoodVC.mood = mood
 //            }
 //        }
 //    }
