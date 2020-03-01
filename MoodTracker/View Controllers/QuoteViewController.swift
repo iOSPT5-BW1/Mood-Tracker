@@ -10,10 +10,10 @@
 import UIKit
 
 class QuoteViewController: UIViewController {
+    
+    //MARK: - Properties
     var mood: Mood?
     var moodController: MoodModelController?
-
-    @IBOutlet var imageView: UIImageView!
     
     var quote = [Quote]() {
         didSet {
@@ -21,6 +21,11 @@ class QuoteViewController: UIViewController {
                self.imageView.downloadImage(from: url!)
         }
     }
+
+    
+    //MARK: - IBOutlet
+    @IBOutlet var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,6 @@ class QuoteViewController: UIViewController {
             switch result {
             case.success(let quotes):
                 self?.quote = quotes
-                print(self!.quote)
             case.failure(let error):
                 print(error)
             }
@@ -41,7 +45,6 @@ class QuoteViewController: UIViewController {
     @IBAction func trackingBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 
 }
 

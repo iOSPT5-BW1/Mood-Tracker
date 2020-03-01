@@ -39,9 +39,7 @@ class MoodModelController {
     //MARK: - Helper Functions
     func getDate() -> String {
         let formatter = DateFormatter()
-        //formatter.dateFormat = "MMM d yyyy"
         let currentDate = formatter.string(from: Date())
-        print("date: \(currentDate)")
         return currentDate
     }
     
