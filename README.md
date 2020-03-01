@@ -8,7 +8,8 @@ With this app you can look back to what caused those changes.
 - [x] Track your mood with a simple click of a button
 - [x] Add comments about your mood
 - [x] Visual representation of moods
-- [x] Quotes to help you get back in a positive mood
+- [x] Can delete moods 
+- [x] Shows Quotes from an API to help you get back in a positive mood
 
 ## Authors
 
