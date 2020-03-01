@@ -12,9 +12,8 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     
-    
-    var mood: Mood?
-    var moodController: MoodModelController?
+    var mood: Mood
+    var moodController: MoodModelController
     
     init?(coder: NSCoder, mood: Mood, moodController: MoodModelController) {
         self.mood = mood
@@ -28,9 +27,13 @@ class CommentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(mood)
-//        print(mood.emotion)
+        commentTextView.becomeFirstResponder()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        commentTextView.becomeFirstResponder()
+//    }
     
     // MARK: IBActions
     
@@ -40,10 +43,11 @@ class CommentViewController: UIViewController {
     
     @IBAction func saveBtnPressed(_ sender: Any) {
         
-        let comment = commentTextView!.text ?? ""
-        if let emotion = mood?.emotion,
-            let date = mood?.date {
-            moodController?.createMood(emotion: emotion, comment: comment, date: date, color: emotion.color)
+        if let comment = commentTextView.text {
+            let emotion = mood.emotion
+            let date = mood.date
+            moodController.createMood(emotion: emotion, comment: comment, date: date, color: emotion.color)
+            print(moodController.moods)
         }
     }
     

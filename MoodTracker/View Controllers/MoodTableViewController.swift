@@ -11,19 +11,15 @@ import UIKit
 class MoodTableViewController: UITableViewController {
     var moodModelController = MoodModelController()
     var mood: Mood?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
 
+    }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +42,7 @@ class MoodTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+
 
     
     // MARK: - Navigation

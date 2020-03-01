@@ -29,7 +29,7 @@ class MoodModelController {
 
     func createMood(emotion: Emotion, comment: String?, date: Date, color: Color) {
 
-        let newMood = Mood(emotion: emotion, comment: nil, date: date)
+        let newMood = Mood(emotion: emotion, comment: comment, date: date)
         
         moods.append(newMood)
         saveToPersistentStore()

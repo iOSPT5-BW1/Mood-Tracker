@@ -12,6 +12,7 @@ class MoodTableViewCell: UITableViewCell {
     
     //MARK: IBOutlets
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
     
     //MARK: Properties
@@ -29,6 +30,7 @@ class MoodTableViewCell: UITableViewCell {
         guard let mood = mood else { return }
         backgroundColor = mood.emotion.moodColor
         dateLabel.text = mood.dateString
+        commentLabel.text = mood.comment
     }
 
     

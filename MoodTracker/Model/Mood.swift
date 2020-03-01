@@ -78,6 +78,6 @@ struct Mood: Codable, Equatable {
 
 let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateStyle = .full
+    formatter.dateStyle = .short
     return formatter
 }()
