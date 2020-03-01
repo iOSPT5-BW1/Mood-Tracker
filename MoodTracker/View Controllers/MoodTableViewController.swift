@@ -50,13 +50,11 @@ class MoodTableViewController: UITableViewController {
     
     // MARK: - Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showMoodDetail" {
+//        if segue.identifier == "TrackingCommentSegue" {
 //            if let indexPath = tableView.indexPathForSelectedRow,
 //                let editMoodVC = segue.destination as? CommentViewController {
-//                editMoodVC.mood = mood
 //                let mood = moodModelController.moods[indexPath.row]
-//                //Not sure if we are going to need the specific mood we are selecting
-//
+//                editMoodVC.mood = mood
 //            }
 //        }
 //    }
