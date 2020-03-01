@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bdn-Ac-I0d">
-                                <rect key="frame" x="0.0" y="88" width="414" height="525"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="569"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-lh-ZGQ">
                                 <rect key="frame" x="284" y="664" width="90" height="40"/>
@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1374" y="700"/>
+            <point key="canvasLocation" x="-1323" y="824"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="pV1-pJ-G0g">
@@ -458,6 +458,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7q0-kb-Ceg"/>
-        <segue reference="rET-Cg-7CN"/>
+        <segue reference="VRb-eU-FO7"/>
     </inferredMetricsTieBreakers>
 </document>
