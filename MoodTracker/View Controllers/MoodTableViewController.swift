@@ -14,6 +14,7 @@ class MoodTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +27,6 @@ class MoodTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return moodModelController.moods.count
     }
 
@@ -54,6 +54,4 @@ class MoodTableViewController: UITableViewController {
 //        }
 //    }
     
-
 }
-
