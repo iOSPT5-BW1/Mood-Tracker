@@ -8,20 +8,42 @@
 
 import UIKit
 
-class MoodTableViewController: UITableViewController {
+class MoodTableViewController: UITableViewController, ThemeDelegate {
+    
+    func setTheme() {
+        var color: UIColor
+        
+        switch themeHelper.themePreference {
+        case "Dark":
+            color = .darkGray
+        case "White":
+            color = .white
+        default:
+            return
+        }
+        self.moodTableView.backgroundColor = color
+    }
+    
     var moodModelController = MoodModelController()
     var mood: Mood?
+    let themeHelper = ThemeHelper()
+    
+    @IBOutlet var moodTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setTheme()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+        setTheme()
     }
 
     
@@ -47,6 +69,12 @@ class MoodTableViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let moods = moodModelController.moods
+        let mood = moods[indexPath.row]
+        performSegue(withIdentifier: "CommentEditSegue", sender: mood)
+    }
+    
     
     // MARK: - Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,5 +86,17 @@ class MoodTableViewController: UITableViewController {
 //            }
 //        }
 //    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ThemeSelectSegue" {
+            guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController else { return }
+            themeSelectionVC.themeHelper = themeHelper
+            themeSelectionVC.delegate = self
+        }
+    }
+    
+    func themeSelected() {
+        setTheme()
+    }
     
 }
