@@ -13,6 +13,8 @@ class MoodModelController {
     //MARK: - Properties
     var moods: [Mood] = []
     
+    weak var newMoodDelegate: AddNewMoodDelegate?
+    
     var dateFormatter: DateFormatter = {
        let formatter = DateFormatter()
         formatter.dateFormat = "MMM d yyyy"

@@ -143,7 +143,7 @@
         <!--MoodPicker-->
         <scene sceneID="QVX-WI-9Vh">
             <objects>
-                <viewController id="M4h-fv-Ydm" userLabel="MoodPicker" customClass="MoodPickerViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoodPickerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4h-fv-Ydm" userLabel="MoodPicker" customClass="MoodPickerViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lPl-TK-Jch">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -397,11 +397,15 @@
                     <navigationItem key="navigationItem" id="19L-3u-CAH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Us8-sd-Pk4">
                             <connections>
-                                <segue destination="z5h-l2-NqZ" kind="presentation" id="odn-XP-Osu"/>
+                                <action selector="addButtonTapped:" destination="udL-Dy-zdq" id="krz-4S-aqJ"/>
+                                <segue destination="z5h-l2-NqZ" kind="presentation" identifier="MoodPickerSegue" id="0Al-u3-hsS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="Us8-sd-Pk4" id="IBk-BM-W5X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EtP-Yz-G0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,26 +12,23 @@ class MoodTableViewController: UITableViewController {
     var moodModelController = MoodModelController()
     var mood: Mood?
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        moodModelController.newMoodDelegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
-    }
-
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return moodModelController.moods.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoodCell", for: indexPath) as? MoodTableViewCell else { return UITableViewCell() }
         let mood = moodModelController.moods[indexPath.row]
         cell.mood = mood
+        cell.moodController = moodModelController
         return cell
     }
     
@@ -43,8 +40,6 @@ class MoodTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
-
     
     // MARK: - Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,4 +52,27 @@ class MoodTableViewController: UITableViewController {
 //        }
 //    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MoodPickerSegue" {
+            let navController = segue.destination as! UINavigationController
+            let moodPickerVC = navController.topViewController as? MoodPickerViewController
+            moodPickerVC?.moodController = moodModelController
+        } else if segue.identifier == "TrackingCommentSegue" {
+
+        }
+    }
+    
+//    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let moodPickerVC: UIViewController = storyboard.instantiateViewController(identifier: "MoodPickerVC") as! MoodPickerViewController
+//        let navController = UINavigationController(rootViewController: moodPickerVC)
+//        present(navController, animated: true)
+//    }
+    
+}
+
+extension MoodTableViewController: AddNewMoodDelegate {
+    func updateWithNewMood() {
+        tableView.reloadData()
+    }
 }

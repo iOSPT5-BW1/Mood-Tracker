@@ -47,8 +47,9 @@ class CommentViewController: UIViewController {
             let emotion = mood.emotion
             let date = mood.date
             moodController.createMood(emotion: emotion, comment: comment, date: date, color: emotion.color)
-            print(moodController.moods)
+            moodController.newMoodDelegate?.updateWithNewMood()
         }
+        
     }
     
     // MARK: - Navigation
@@ -57,6 +58,7 @@ class CommentViewController: UIViewController {
         if segue.identifier == "CommentQuoteSegue" {
             guard let quoteVC = segue.destination as? QuoteViewController else { return }
             quoteVC.mood = mood
+            
         }
     }
     

@@ -12,13 +12,13 @@ class MoodPickerViewController: UIViewController {
     
     @IBOutlet weak var todaysDateLabel: UILabel!
     
-    let moodController = MoodModelController()
+    var moodController: MoodModelController?
     let date = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        todaysDateLabel.text = moodController.getDate()
+        todaysDateLabel.text = moodController?.getDate()
     }
     
 
@@ -57,8 +57,9 @@ class MoodPickerViewController: UIViewController {
 //    }
 
     func navigateToCommentVC(with mood: Mood) {
+        guard let moodController = moodController else { return }
         guard let commentVC = storyboard?.instantiateViewController(identifier: "CommentViewController", creator: { coder in
-            return CommentViewController(coder: coder, mood: mood, moodController: self.moodController)
+            return CommentViewController(coder: coder, mood: mood, moodController: moodController)
         }) else { fatalError("failed to load commentVC from storyboard")}
         navigationController?.pushViewController(commentVC, animated: true)
     }
