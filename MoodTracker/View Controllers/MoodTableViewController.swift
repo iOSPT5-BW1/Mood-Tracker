@@ -46,7 +46,7 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
         setTheme()
 
     
-    @IBOutlet weak var addButton: UIBarButtonItem!
+    //@IBOutlet weak var addButton: UIBarButtonItem!
     
 
     }
