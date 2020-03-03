@@ -35,6 +35,7 @@ class CommentViewController: UIViewController {
         updateViews()
     }
     
+
     func updateViews() {
         commentTextView.text = mood.comment
     }
