@@ -39,10 +39,22 @@ class QuoteViewController: UIViewController {
             }
             
         }
+        //Button to share the quote with others
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
     
     @IBAction func trackingBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func shareTapped() {
+        guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
+            print ("No image found")
+            return
+        }
+        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
 
 }
