@@ -12,7 +12,11 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     
-    var mood: Mood
+    var mood: Mood {
+        didSet {
+            updateViews()
+        }
+    }
     var moodController: MoodModelController
     
     init?(coder: NSCoder, mood: Mood, moodController: MoodModelController) {
@@ -28,6 +32,11 @@ class CommentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         commentTextView.becomeFirstResponder()
+        updateViews()
+    }
+    
+    func updateViews() {
+        commentTextView.text = mood.comment
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
