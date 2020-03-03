@@ -74,15 +74,13 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
     }
     
     // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "TrackingCommentSegue" {
-//            if let indexPath = tableView.indexPathForSelectedRow,
-//                let editMoodVC = segue.destination as? CommentViewController {
-//                let mood = moodModelController.moods[indexPath.row]
-//                editMoodVC.mood = mood
-//            }
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let moodToUpdate = moodModelController.moods[indexPath.row]
+         guard let commentVC = storyboard?.instantiateViewController(identifier: "CommentViewController", creator: { coder in
+             return CommentViewController(coder: coder, mood: moodToUpdate, moodController: self.moodModelController)
+         }) else { fatalError("failed to load commentVC from storyboard")}
+        navigationController?.pushViewController(commentVC, animated: true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
