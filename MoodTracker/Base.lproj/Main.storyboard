@@ -12,14 +12,16 @@
             <objects>
                 <viewController storyboardIdentifier="QuoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HVh-JB-716" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sKI-Rw-wCv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bdn-Ac-I0d">
+
                                 <rect key="frame" x="0.0" y="44" width="414" height="569"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-lh-ZGQ">
                                 <rect key="frame" x="284" y="664" width="90" height="40"/>
+
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="fee-1S-OFt"/>
@@ -60,17 +62,24 @@
             <objects>
                 <viewController storyboardIdentifier="CommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oeI-ql-yea" customClass="CommentViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VsV-Tl-SHz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What made you feel this way today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXQ-sK-Nmz">
+
+                              
+
                                 <rect key="frame" x="69.666666666666657" y="108" width="274.66666666666674" height="48"/>
+
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-XG-rQs">
+
+
                                 <rect key="frame" x="30" y="186" width="354" height="320"/>
+
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sJN-7d-BaR">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="250"/>
@@ -340,7 +349,7 @@
             </objects>
             <point key="canvasLocation" x="-2594" y="-28"/>
         </scene>
-        <!--Mood Table View Controller-->
+        <!--Moods-->
         <scene sceneID="XDv-tT-Lxb">
             <objects>
                 <tableViewController id="udL-Dy-zdq" customClass="MoodTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -385,7 +394,7 @@
                                 <connections>
                                     <outlet property="commentLabel" destination="d3T-KS-qWw" id="IdO-1H-Rcs"/>
                                     <outlet property="dateLabel" destination="FHb-bY-Y4M" id="IP2-ue-gYm"/>
-                                    <segue destination="oeI-ql-yea" kind="show" identifier="TrackingCommentSegue" id="7q0-kb-Ceg"/>
+                                    <segue destination="oeI-ql-yea" kind="presentation" identifier="CommentEditSegue" id="RTf-dp-Tu4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -394,7 +403,12 @@
                             <outlet property="delegate" destination="udL-Dy-zdq" id="PGF-Ft-ewt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="19L-3u-CAH">
+                    <navigationItem key="navigationItem" title="Moods" id="19L-3u-CAH">
+                        <barButtonItem key="leftBarButtonItem" title="SelectTheme" id="6Tt-F4-cck">
+                            <connections>
+                                <segue destination="HAs-8I-ZxE" kind="show" identifier="ThemeSelectSegue" id="VZq-iu-Sov"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Us8-sd-Pk4">
                             <connections>
                                 <action selector="addButtonTapped:" destination="udL-Dy-zdq" id="krz-4S-aqJ"/>
@@ -404,12 +418,71 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+
+                        <outlet property="moodTableView" destination="6kP-Ec-Es6" id="PV7-V0-EfB"/>
+
                         <outlet property="addButton" destination="Us8-sd-Pk4" id="IBk-BM-W5X"/>
+
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EtP-Yz-G0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2388.4057971014495" y="679.6875"/>
+        </scene>
+        <!--Select Theme-->
+        <scene sceneID="KUJ-fj-Z1a">
+            <objects>
+                <viewController id="hOV-pd-Kgj" customClass="ThemeSelectionViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9gO-ls-W0W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiJ-Fv-Z5h">
+                                <rect key="frame" x="100" y="188" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ot-Zq-zft">
+                                <rect key="frame" x="80" y="314" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Cnu-UP-uDJ"/>
+                                    <constraint firstAttribute="width" constant="80" id="Mdu-Fx-uIA"/>
+                                </constraints>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="darkThemeBtnTapped:" destination="hOV-pd-Kgj" eventType="touchUpInside" id="t3d-3f-yPs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4l-if-aHu">
+                                <rect key="frame" x="254" y="314" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DTK-iL-MNL"/>
+                                    <constraint firstAttribute="width" constant="80" id="nZ9-t8-Hif"/>
+                                </constraints>
+                                <state key="normal" title="White"/>
+                                <connections>
+                                    <action selector="whiteThemeBtnTapped:" destination="hOV-pd-Kgj" eventType="touchUpInside" id="5De-ab-m5b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s4l-if-aHu" firstAttribute="top" secondItem="kiJ-Fv-Z5h" secondAttribute="bottom" constant="105" id="1R8-Lt-Jrm"/>
+                            <constraint firstItem="kiJ-Fv-Z5h" firstAttribute="top" secondItem="Dfw-Nn-vFK" secondAttribute="top" constant="100" id="7hw-E2-0O5"/>
+                            <constraint firstItem="6ot-Zq-zft" firstAttribute="leading" secondItem="Dfw-Nn-vFK" secondAttribute="leading" constant="80" id="GOK-eR-NAz"/>
+                            <constraint firstItem="Dfw-Nn-vFK" firstAttribute="trailing" secondItem="kiJ-Fv-Z5h" secondAttribute="trailing" constant="100" id="N07-mb-ool"/>
+                            <constraint firstItem="6ot-Zq-zft" firstAttribute="top" secondItem="kiJ-Fv-Z5h" secondAttribute="bottom" constant="105" id="X8N-Jt-ljw"/>
+                            <constraint firstItem="Dfw-Nn-vFK" firstAttribute="trailing" secondItem="s4l-if-aHu" secondAttribute="trailing" constant="80" id="X9V-fo-wJs"/>
+                            <constraint firstItem="kiJ-Fv-Z5h" firstAttribute="leading" secondItem="Dfw-Nn-vFK" secondAttribute="leading" constant="100" id="qJP-ut-2pj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dfw-Nn-vFK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Theme" id="DeC-ag-dRl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgB-2q-SSf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2388" y="1432"/>
         </scene>
         <!--Tracking-->
         <scene sceneID="ljI-Jz-Qaf">
@@ -417,8 +490,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fNh-az-g4R" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tracking" id="Wyz-Fh-dNd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cIf-c8-dLf">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cIf-c8-dLf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.87706613540649414" green="0.92292499542236328" blue="0.94365382194519043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -451,6 +524,25 @@
             </objects>
             <point key="canvasLocation" x="-1742.0289855072465" y="-28.125"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cSX-3e-onB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HAs-8I-ZxE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="PUW-Tj-cVl"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lcl-Wb-eli">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hOV-pd-Kgj" kind="relationship" relationship="rootViewController" id="G9a-zo-bGW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOn-Sm-pNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3175" y="1432"/>
+        </scene>
     </scenes>
     <resources>
         <image name="angry" width="96" height="96"/>
@@ -461,7 +553,9 @@
         <image name="sad" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
+
         <segue reference="7q0-kb-Ceg"/>
         <segue reference="VRb-eU-FO7"/>
+
     </inferredMetricsTieBreakers>
 </document>

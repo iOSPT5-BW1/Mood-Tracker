@@ -8,15 +8,47 @@
 
 import UIKit
 
-class MoodTableViewController: UITableViewController {
+class MoodTableViewController: UITableViewController, ThemeDelegate {
+    
+    func setTheme() {
+        var color: UIColor
+        
+        switch themeHelper.themePreference {
+        case "Dark":
+            color = .darkGray
+        case "White":
+            color = .white
+        default:
+            return
+        }
+        self.moodTableView.backgroundColor = color
+    }
+    
     var moodModelController = MoodModelController()
     var mood: Mood?
+    let themeHelper = ThemeHelper()
     
-    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet var moodTableView: UITableView!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         moodModelController.newMoodDelegate = self
+        setTheme()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        setTheme()
+
+    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+
     }
     
     // MARK: - Table view data source
@@ -53,13 +85,20 @@ class MoodTableViewController: UITableViewController {
 //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
         if segue.identifier == "MoodPickerSegue" {
             let navController = segue.destination as! UINavigationController
             let moodPickerVC = navController.topViewController as? MoodPickerViewController
             moodPickerVC?.moodController = moodModelController
-        } else if segue.identifier == "TrackingCommentSegue" {
-
+        } else if segue.identifier == "ThemeSelectSegue" {
+            guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController else { return }
+            themeSelectionVC.themeHelper = themeHelper
+            themeSelectionVC.delegate = self
         }
+    }
+    
+    func themeSelected() {
+        setTheme()
     }
     
 //    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
