@@ -16,15 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bdn-Ac-I0d">
-
-                                <rect key="frame" x="0.0" y="44" width="414" height="569"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="608"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-lh-ZGQ">
-                                <rect key="frame" x="284" y="664" width="90" height="40"/>
-
+                                <rect key="frame" x="315" y="659" width="59" height="40"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="fee-1S-OFt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="fee-1S-OFt"/>
                                     <constraint firstAttribute="height" constant="40" id="zl7-bK-YY1"/>
                                 </constraints>
                                 <state key="normal" title="Tracking">
@@ -35,7 +33,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.87706613540649414" green="0.92292499542236328" blue="0.94365382194519043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zez-Hq-3mo" firstAttribute="trailing" secondItem="Wsw-lh-ZGQ" secondAttribute="trailing" constant="40" id="4He-hb-k6j"/>
                             <constraint firstItem="Wsw-lh-ZGQ" firstAttribute="top" secondItem="Bdn-Ac-I0d" secondAttribute="bottom" constant="51" id="5X9-tB-hvw"/>
@@ -55,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1323" y="824"/>
+            <point key="canvasLocation" x="-1374" y="700"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="pV1-pJ-G0g">
@@ -66,20 +64,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What made you feel this way today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXQ-sK-Nmz">
-
-                              
-
-                                <rect key="frame" x="69.666666666666657" y="108" width="274.66666666666674" height="48"/>
-
+                                <rect key="frame" x="69.666666666666657" y="76" width="274.66666666666674" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-XG-rQs">
-
-
-                                <rect key="frame" x="30" y="186" width="354" height="320"/>
-
+                                <rect key="frame" x="30" y="154" width="354" height="320"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sJN-7d-BaR">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="250"/>
@@ -136,7 +127,7 @@
                             <constraint firstItem="eaO-XG-rQs" firstAttribute="top" secondItem="LXQ-sK-Nmz" secondAttribute="bottom" constant="30" id="fKc-nz-QS1"/>
                             <constraint firstItem="eaO-XG-rQs" firstAttribute="centerX" secondItem="VsV-Tl-SHz" secondAttribute="centerX" id="kNp-K3-MR9"/>
                             <constraint firstItem="LXQ-sK-Nmz" firstAttribute="centerX" secondItem="VsV-Tl-SHz" secondAttribute="centerX" id="s4g-ex-EtA"/>
-                            <constraint firstItem="LXQ-sK-Nmz" firstAttribute="top" secondItem="wua-HY-8Rd" secondAttribute="top" constant="20" id="zfW-sc-zT0"/>
+                            <constraint firstItem="LXQ-sK-Nmz" firstAttribute="top" secondItem="wua-HY-8Rd" secondAttribute="top" constant="76" id="zfW-sc-zT0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wua-HY-8Rd"/>
                     </view>
@@ -152,7 +143,7 @@
         <!--MoodPicker-->
         <scene sceneID="QVX-WI-9Vh">
             <objects>
-                <viewController storyboardIdentifier="MoodPickerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4h-fv-Ydm" userLabel="MoodPicker" customClass="MoodPickerViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M4h-fv-Ydm" userLabel="MoodPicker" customClass="MoodPickerViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lPl-TK-Jch">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -358,41 +349,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MoodCell" rowHeight="61.666667938232422" id="4bb-IH-jVE" customClass="MoodTableViewCell" customModule="MoodTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="61.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MoodCell" rowHeight="64" id="4bb-IH-jVE" customClass="MoodTableViewCell" customModule="MoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4bb-IH-jVE" id="2XG-n8-7By">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="61.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHb-bY-Y4M">
-                                            <rect key="frame" x="25" y="21.666666666666671" width="75" height="18.333333333333329"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="75" id="qAq-fN-aIJ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-KS-qWw">
-                                            <rect key="frame" x="111.99999999999999" y="22" width="37.333333333333329" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="30" y="21.666666666666671" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="FHb-bY-Y4M" firstAttribute="top" secondItem="2XG-n8-7By" secondAttribute="topMargin" constant="10.666666666666671" id="14V-BV-Yb5"/>
-                                        <constraint firstItem="d3T-KS-qWw" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="6qm-gJ-VS1"/>
-                                        <constraint firstItem="FHb-bY-Y4M" firstAttribute="leading" secondItem="2XG-n8-7By" secondAttribute="leadingMargin" constant="5" id="E1A-ke-BnM"/>
-                                        <constraint firstItem="d3T-KS-qWw" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="gDD-jv-Fea"/>
+                                        <constraint firstAttribute="trailing" secondItem="FHb-bY-Y4M" secondAttribute="trailing" constant="311" id="cLd-od-yL4"/>
                                         <constraint firstItem="FHb-bY-Y4M" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="s71-OM-nqU"/>
-                                        <constraint firstItem="d3T-KS-qWw" firstAttribute="leading" secondItem="FHb-bY-Y4M" secondAttribute="trailing" constant="12" id="sAb-Hh-x1n"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="d3T-KS-qWw" secondAttribute="trailing" constant="12" id="zcx-c3-et4"/>
+                                        <constraint firstItem="FHb-bY-Y4M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2XG-n8-7By" secondAttribute="leadingMargin" id="xvt-fh-zIo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="commentLabel" destination="d3T-KS-qWw" id="IdO-1H-Rcs"/>
                                     <outlet property="dateLabel" destination="FHb-bY-Y4M" id="IP2-ue-gYm"/>
                                     <segue destination="oeI-ql-yea" kind="presentation" identifier="CommentEditSegue" id="RTf-dp-Tu4"/>
                                 </connections>
@@ -411,18 +388,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Us8-sd-Pk4">
                             <connections>
-                                <action selector="addButtonTapped:" destination="udL-Dy-zdq" id="krz-4S-aqJ"/>
-                                <segue destination="z5h-l2-NqZ" kind="presentation" identifier="MoodPickerSegue" id="0Al-u3-hsS"/>
+                                <segue destination="z5h-l2-NqZ" kind="presentation" id="odn-XP-Osu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-
                         <outlet property="moodTableView" destination="6kP-Ec-Es6" id="PV7-V0-EfB"/>
-
-                        <outlet property="addButton" destination="Us8-sd-Pk4" id="IBk-BM-W5X"/>
-
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EtP-Yz-G0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -493,7 +465,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cIf-c8-dLf">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.87706613540649414" green="0.92292499542236328" blue="0.94365382194519043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -553,9 +524,7 @@
         <image name="sad" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-
-        <segue reference="7q0-kb-Ceg"/>
-        <segue reference="VRb-eU-FO7"/>
-
+        <segue reference="RTf-dp-Tu4"/>
+        <segue reference="rET-Cg-7CN"/>
     </inferredMetricsTieBreakers>
 </document>
