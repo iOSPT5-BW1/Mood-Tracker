@@ -25,6 +25,9 @@
 		AF312EFF240B7CF600BC1C2B /* String+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF312EFE240B7CF600BC1C2B /* String+UserDefaults.swift */; };
 		AF312F01240B83FA00BC1C2B /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF312F00240B83FA00BC1C2B /* ThemeSelectionViewController.swift */; };
 		AF5840B02406278500952E73 /* MoodModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5840AF2406278500952E73 /* MoodModelController.swift */; };
+
+		C92F5600240B8D67007DBB13 /* NewMoodDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F55FF240B8D67007DBB13 /* NewMoodDelegate.swift */; };
+
 		C978F60724076D9D0079DF6D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978F60624076D9D0079DF6D /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		AF312EFE240B7CF600BC1C2B /* String+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UserDefaults.swift"; sourceTree = "<group>"; };
 		AF312F00240B83FA00BC1C2B /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 		AF5840AF2406278500952E73 /* MoodModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodModelController.swift; path = MoodTracker/Model/MoodModelController.swift; sourceTree = SOURCE_ROOT; };
+
+		C92F55FF240B8D67007DBB13 /* NewMoodDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMoodDelegate.swift; sourceTree = "<group>"; };
+
 		C978F60624076D9D0079DF6D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +88,7 @@
 		3A633A612404D479001949D8 /* MoodTracker */ = {
 			isa = PBXGroup;
 			children = (
+				C92F55FE240B8D49007DBB13 /* Protocols */,
 				3A633A782405FC56001949D8 /* Model */,
 				3A633A772405FC4B001949D8 /* View */,
 				3A633A762405FC3D001949D8 /* Controller */,
@@ -144,6 +151,14 @@
 				AF312F00240B83FA00BC1C2B /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C92F55FE240B8D49007DBB13 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C92F55FF240B8D67007DBB13 /* NewMoodDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +234,7 @@
 			files = (
 				3A633A632404D479001949D8 /* AppDelegate.swift in Sources */,
 				C978F60724076D9D0079DF6D /* Colors.swift in Sources */,
+				C92F5600240B8D67007DBB13 /* NewMoodDelegate.swift in Sources */,
 				3A633A7C2405FEAE001949D8 /* MoodPickerViewController.swift in Sources */,
 				3A633A822405FEEC001949D8 /* MoodTableViewController.swift in Sources */,
 				3A633A7E2405FEC6001949D8 /* QuoteViewController.swift in Sources */,

@@ -33,7 +33,7 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        moodModelController.newMoodDelegate = self
         setTheme()
     }
     
@@ -44,19 +44,23 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
             self.tableView.reloadData()
         }
         setTheme()
-    }
 
+    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+
+    }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return moodModelController.moods.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoodCell", for: indexPath) as? MoodTableViewCell else { return UITableViewCell() }
         let mood = moodModelController.moods[indexPath.row]
         cell.mood = mood
+        cell.moodController = moodModelController
         return cell
     }
     
@@ -68,13 +72,6 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let moods = moodModelController.moods
-        let mood = moods[indexPath.row]
-        performSegue(withIdentifier: "CommentEditSegue", sender: mood)
-    }
-    
     
     // MARK: - Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,7 +85,12 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
 //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ThemeSelectSegue" {
+
+        if segue.identifier == "MoodPickerSegue" {
+            let navController = segue.destination as! UINavigationController
+            let moodPickerVC = navController.topViewController as? MoodPickerViewController
+            moodPickerVC?.moodController = moodModelController
+        } else if segue.identifier == "ThemeSelectSegue" {
             guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController else { return }
             themeSelectionVC.themeHelper = themeHelper
             themeSelectionVC.delegate = self
@@ -99,4 +101,17 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
         setTheme()
     }
     
+//    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let moodPickerVC: UIViewController = storyboard.instantiateViewController(identifier: "MoodPickerVC") as! MoodPickerViewController
+//        let navController = UINavigationController(rootViewController: moodPickerVC)
+//        present(navController, animated: true)
+//    }
+    
+}
+
+extension MoodTableViewController: AddNewMoodDelegate {
+    func updateWithNewMood() {
+        tableView.reloadData()
+    }
 }

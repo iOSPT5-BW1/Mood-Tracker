@@ -29,7 +29,6 @@ class QuoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let quoteRequest = QuoteRequest()
         quoteRequest.getQuote {[weak self] result in
             switch result {
