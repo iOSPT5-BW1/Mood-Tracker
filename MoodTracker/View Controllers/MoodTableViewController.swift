@@ -76,8 +76,8 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let moodToUpdate = moodModelController.moods[indexPath.row]
-         guard let commentVC = storyboard?.instantiateViewController(identifier: "CommentViewController", creator: { coder in
-             return CommentViewController(coder: coder, mood: moodToUpdate, moodController: self.moodModelController)
+         guard let commentVC = storyboard?.instantiateViewController(identifier: "EditCommentVC", creator: { coder in
+             return EditCommentViewController(coder: coder, mood: moodToUpdate, moodController: self.moodModelController)
          }) else { fatalError("failed to load commentVC from storyboard")}
         navigationController?.pushViewController(commentVC, animated: true)
     }

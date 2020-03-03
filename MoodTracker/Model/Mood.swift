@@ -54,7 +54,7 @@ struct Emotion: Codable {
 struct Mood: Codable, Equatable {
     
     let emotion: Emotion
-    let comment: String?
+    var comment: String?
     let date: Date
     
     init (emotion: Emotion, comment: String?, date: Date){

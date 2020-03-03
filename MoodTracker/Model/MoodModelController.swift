@@ -56,7 +56,15 @@ class MoodModelController {
         return currentDate
     }
     
-    
+    func updateMoodComment(mood: Mood, comment: String) {
+        if let index = moods.firstIndex(of: mood) {
+            var mood = moods[index]
+            mood.comment = comment
+            
+            moods[index] = mood
+            saveToPersistentStore()
+        }
+    }
     
     // MARK: Save, Load from Persistent
     private var persistentFileURL: URL? {
