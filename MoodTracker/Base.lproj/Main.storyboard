@@ -362,14 +362,24 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KG-Bh-XxI">
+                                            <rect key="frame" x="84" y="21.666666666666671" width="279" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9KG-Bh-XxI" secondAttribute="trailing" constant="12" id="biV-DW-ySN"/>
                                         <constraint firstAttribute="trailing" secondItem="FHb-bY-Y4M" secondAttribute="trailing" constant="311" id="cLd-od-yL4"/>
+                                        <constraint firstItem="9KG-Bh-XxI" firstAttribute="leading" secondItem="FHb-bY-Y4M" secondAttribute="trailing" constant="12" id="diR-rx-H4U"/>
+                                        <constraint firstItem="9KG-Bh-XxI" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="jGK-a5-ZpQ"/>
                                         <constraint firstItem="FHb-bY-Y4M" firstAttribute="centerY" secondItem="2XG-n8-7By" secondAttribute="centerY" id="s71-OM-nqU"/>
                                         <constraint firstItem="FHb-bY-Y4M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2XG-n8-7By" secondAttribute="leadingMargin" id="xvt-fh-zIo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="commentLabel" destination="9KG-Bh-XxI" id="I7K-XH-TqQ"/>
                                     <outlet property="dateLabel" destination="FHb-bY-Y4M" id="IP2-ue-gYm"/>
                                     <segue destination="oeI-ql-yea" kind="presentation" identifier="CommentEditSegue" id="RTf-dp-Tu4"/>
                                 </connections>
@@ -388,7 +398,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Us8-sd-Pk4">
                             <connections>
-                                <segue destination="z5h-l2-NqZ" kind="presentation" id="odn-XP-Osu"/>
+                                <segue destination="z5h-l2-NqZ" kind="presentation" identifier="MoodPickerSegue" id="odn-XP-Osu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
