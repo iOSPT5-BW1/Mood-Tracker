@@ -331,6 +331,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="liQ-yp-9Up"/>
                     <connections>
+                        <outlet property="angryButton" destination="qj4-N8-96Y" id="96h-Zg-kpA"/>
+                        <outlet property="annoyedButton" destination="rkl-2u-VIw" id="FOg-NM-xZA"/>
+                        <outlet property="excitedButton" destination="5P8-Fw-0W0" id="cXQ-hp-BxG"/>
+                        <outlet property="happyButton" destination="HsG-Df-Pjo" id="zl9-7j-JaW"/>
+                        <outlet property="mehButton" destination="BwN-IL-BQh" id="SIE-Bj-TSO"/>
+                        <outlet property="moodPickerImage" destination="kbJ-za-5s9" id="Jhk-GT-AC6"/>
+                        <outlet property="sadButton" destination="ak4-dk-UPD" id="h96-lH-5hM"/>
                         <outlet property="todaysDateLabel" destination="lgy-6D-XXI" id="znq-Yu-wRI"/>
                         <segue destination="oeI-ql-yea" kind="show" identifier="MoodCommentSegue" id="mW4-Mw-rL3"/>
                     </connections>
