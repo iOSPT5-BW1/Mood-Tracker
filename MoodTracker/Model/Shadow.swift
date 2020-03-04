@@ -11,9 +11,9 @@ import UIKit
 extension UIView {
     func moodPickerShadow() {
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 5, height: 5)
+        layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowOpacity = 0.3
-        layer.shadowRadius = 3
+        layer.shadowRadius = 5
         clipsToBounds = false
     }
     
