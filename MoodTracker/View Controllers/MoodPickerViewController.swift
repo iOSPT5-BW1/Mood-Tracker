@@ -17,7 +17,6 @@ class MoodPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         todaysDateLabel.text = moodController?.getDate()
     }
     
