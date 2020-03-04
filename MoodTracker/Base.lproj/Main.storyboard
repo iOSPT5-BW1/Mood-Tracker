@@ -7,25 +7,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Quote-->
         <scene sceneID="KID-Bz-Hwk">
             <objects>
-                <viewController storyboardIdentifier="QuoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HVh-JB-716" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuoteViewController" title="Quote" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HVh-JB-716" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sKI-Rw-wCv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3b-6O-QPG">
-                                <rect key="frame" x="163.66666666666666" y="320" width="86.666666666666657" height="24"/>
+                                <rect key="frame" x="163.66666666666666" y="295.66666666666669" width="86.666666666666657" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.35294117650000001" green="0.31764705879999999" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bdn-Ac-I0d">
-                                <rect key="frame" x="0.0" y="56" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="503"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-lh-ZGQ">
-                                <rect key="frame" x="284" y="659" width="90" height="40"/>
+                                <rect key="frame" x="284" y="610" width="90" height="40"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="fee-1S-OFt"/>
@@ -36,6 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="trackingBtnPressed:" destination="HVh-JB-716" eventType="touchUpInside" id="E5O-eb-l2b"/>
+                                    <segue destination="XI9-Z3-SOx" kind="unwind" unwindAction="unwindToMoodTableViewControllerWithSegue:" id="raW-qF-hSo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,13 +53,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zez-Hq-3mo"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="B5c-ZP-uTh"/>
+                    <tabBarItem key="tabBarItem" title="Quote" image="quote.bubble.fill" catalog="system" id="B5c-ZP-uTh"/>
                     <navigationItem key="navigationItem" id="6Xk-RC-YQL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="Bdn-Ac-I0d" id="t92-6x-KJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XI9-Z3-SOx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-859" y="680"/>
         </scene>
@@ -333,6 +336,7 @@
                     <connections>
                         <outlet property="angryButton" destination="qj4-N8-96Y" id="96h-Zg-kpA"/>
                         <outlet property="annoyedButton" destination="rkl-2u-VIw" id="FOg-NM-xZA"/>
+                        <outlet property="buttonContainerImage" destination="FGi-kv-6wK" id="X02-oF-i9v"/>
                         <outlet property="excitedButton" destination="5P8-Fw-0W0" id="cXQ-hp-BxG"/>
                         <outlet property="happyButton" destination="HsG-Df-Pjo" id="zl9-7j-JaW"/>
                         <outlet property="mehButton" destination="BwN-IL-BQh" id="SIE-Bj-TSO"/>
@@ -575,7 +579,7 @@
         <scene sceneID="ljI-Jz-Qaf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fNh-az-g4R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tracking" id="Wyz-Fh-dNd"/>
+                    <tabBarItem key="tabBarItem" title="Tracking" image="tray.full.fill" catalog="system" id="Wyz-Fh-dNd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cIf-c8-dLf">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -637,7 +641,9 @@
         <image name="happy" width="96" height="96"/>
         <image name="meh" width="96" height="96"/>
         <image name="moodPicker" width="403" height="356"/>
+        <image name="quote.bubble.fill" catalog="system" width="64" height="54"/>
         <image name="sad" width="96" height="96"/>
+        <image name="tray.full.fill" catalog="system" width="64" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rET-Cg-7CN"/>

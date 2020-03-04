@@ -18,13 +18,14 @@ class MoodPickerViewController: UIViewController {
     @IBOutlet weak var mehButton: UIButton!
     @IBOutlet weak var happyButton: UIButton!
     @IBOutlet weak var excitedButton: UIButton!
+    @IBOutlet weak var buttonContainerImage: UIImageView!
     
     var moodController: MoodModelController?
     let date = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        moodPickerImage.moodPickerShadow(); angryButton.buttonShadow(); annoyedButton.buttonShadow(); sadButton.buttonShadow(); mehButton.buttonShadow(); happyButton.buttonShadow(); excitedButton.buttonShadow()
+        moodPickerImage.moodPickerShadow(); angryButton.buttonShadow(); annoyedButton.buttonShadow(); sadButton.buttonShadow(); mehButton.buttonShadow(); happyButton.buttonShadow(); excitedButton.buttonShadow(); buttonContainerImage.moodPickerShadow()
         todaysDateLabel.text = moodController?.getDate()
     }
 
