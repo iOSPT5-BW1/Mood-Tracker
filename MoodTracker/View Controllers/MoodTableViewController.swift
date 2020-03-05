@@ -8,42 +8,30 @@
 
 import UIKit
 
-class MoodTableViewController: UITableViewController, ThemeDelegate {
+class MoodTableViewController: UITableViewController {
     
-    func setTheme() {
-        var color: UIColor
-        
-        switch themeHelper.themePreference {
-        case "Dark":
-            color = .darkGray
-        case "White":
-            color = .white
-        default:
-            return
-        }
-        self.moodTableView.backgroundColor = color
-    }
     
     var moodModelController = MoodModelController()
     var mood: Mood?
     let themeHelper = ThemeHelper()
+    //let light = Notification.Name(rawValue: .themePreferenceKey)
+    lazy var theme = Notification.Name(rawValue: themeHelper.themePreference ?? .darkNotificationKey)
     
     @IBOutlet var moodTableView: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         moodModelController.newMoodDelegate = self
-        setTheme()
+        createObservers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        theme = Notification.Name(rawValue: themeHelper.themePreference ?? .lightNotificationKey)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        setTheme()
 
     
     //@IBOutlet weak var addButton: UIBarButtonItem!
@@ -89,15 +77,38 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
             let moodPickerVC = navController.topViewController as? MoodPickerViewController
             moodPickerVC?.moodController = moodModelController
         } else if segue.identifier == "ThemeSelectSegue" {
-            guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController else { return }
-            themeSelectionVC.themeHelper = themeHelper
-            themeSelectionVC.delegate = self
+            let navController = segue.destination as! UINavigationController
+            let themeSelectionVC = navController.topViewController as? ThemeSelectionViewController
+            themeSelectionVC?.themeHelper = themeHelper
+            //themeSelectionVC?.delegate = self
         }
     }
     
-    func themeSelected() {
-        setTheme()
+    // MARK: NSNotification Observers
+    
+    func createObservers() {
+        
+        //Light
+        //NotificationCenter.default.addObserver(self, selector: #selector(MoodTableViewController.updateTheme(notification:)), name: theme, object: nil)
+        
+        //Dark
+        NotificationCenter.default.addObserver(self, selector: #selector(MoodTableViewController.updateTheme(notification:)), name: theme, object: nil)
     }
+    
+    @objc func updateTheme(notification: NSNotification) {
+        if notification.name == theme {
+            if theme.rawValue == .darkNotificationKey {
+                view.backgroundColor = .darkGray
+            } else if theme.rawValue == .lightNotificationKey {
+                view.backgroundColor = .white
+            }
+        } else { return }
+//        let isLight = notification.name == light
+//        let color = isLight ? UIColor.white : UIColor.darkGray
+//        view.backgroundColor = color
+    }
+    
+
     
 //    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -109,6 +120,7 @@ class MoodTableViewController: UITableViewController, ThemeDelegate {
 }
 
 extension MoodTableViewController: AddNewMoodDelegate {
+    
     func updateWithNewMood() {
         tableView.reloadData()
     }

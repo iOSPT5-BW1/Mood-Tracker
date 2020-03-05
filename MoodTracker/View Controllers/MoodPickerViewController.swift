@@ -9,15 +9,20 @@
 import UIKit
 
 class MoodPickerViewController: UIViewController {
+    func themeSelected(color: UIColor) {
+        view.backgroundColor = color
+    }
+    
     
     @IBOutlet weak var todaysDateLabel: UILabel!
     
     var moodController: MoodModelController?
     let date = Date()
+    let theme = ThemeSelectionViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         todaysDateLabel.text = moodController?.getDate()
     }
     
