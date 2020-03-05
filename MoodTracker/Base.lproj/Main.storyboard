@@ -12,14 +12,14 @@
             <objects>
                 <viewController storyboardIdentifier="QuoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HVh-JB-716" customClass="QuoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sKI-Rw-wCv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bdn-Ac-I0d">
-                                <rect key="frame" x="0.0" y="56" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="569"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-lh-ZGQ">
-                                <rect key="frame" x="315" y="659" width="59" height="40"/>
+                                <rect key="frame" x="315" y="664" width="59" height="40"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="fee-1S-OFt"/>
@@ -54,6 +54,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9G-LE-z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-859" y="680"/>
+        </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="hjS-oO-y2X">
+            <objects>
+                <viewController id="6mA-vh-hi3" customClass="GraphViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uk4-fa-LeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lH8-qN-yoS" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lH8-qN-yoS" secondAttribute="height" multiplier="1:1" id="EFR-tS-uAZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lH8-qN-yoS" firstAttribute="leading" secondItem="DUn-LX-ftE" secondAttribute="leading" constant="20" id="1ht-LP-QZy"/>
+                            <constraint firstItem="DUn-LX-ftE" firstAttribute="trailing" secondItem="lH8-qN-yoS" secondAttribute="trailing" constant="20" id="AVm-VG-4h7"/>
+                            <constraint firstItem="lH8-qN-yoS" firstAttribute="centerY" secondItem="Uk4-fa-LeZ" secondAttribute="centerY" id="VnG-s5-gxr"/>
+                            <constraint firstItem="lH8-qN-yoS" firstAttribute="centerX" secondItem="Uk4-fa-LeZ" secondAttribute="centerX" id="aQb-RE-8ZE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DUn-LX-ftE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2kV-JE-d0Z"/>
+                    <connections>
+                        <outlet property="chartView" destination="lH8-qN-yoS" id="u7T-a8-NUg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGz-Ix-AQm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-606" y="1407"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="pV1-pJ-G0g">
@@ -334,6 +368,7 @@
                     <connections>
                         <segue destination="fNh-az-g4R" kind="relationship" relationship="viewControllers" id="W0w-88-etA"/>
                         <segue destination="HVh-JB-716" kind="relationship" relationship="viewControllers" id="VRb-eU-FO7"/>
+                        <segue destination="zZw-CR-BGx" kind="relationship" relationship="viewControllers" id="rMK-RQ-4SD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8d-bX-Vv2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -605,6 +640,25 @@
             </objects>
             <point key="canvasLocation" x="-3175" y="1432"/>
         </scene>
+        <!--Chart-->
+        <scene sceneID="RqG-ml-8DO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zZw-CR-BGx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chart" id="JTc-pv-Hk7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cGn-Ql-rbJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6mA-vh-hi3" kind="relationship" relationship="rootViewController" id="wd0-HJ-KnR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVK-n3-biY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1378" y="1407"/>
+        </scene>
     </scenes>
     <resources>
         <image name="angry" width="96" height="96"/>
@@ -615,6 +669,6 @@
         <image name="sad" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rET-Cg-7CN"/>
+        <segue reference="VRb-eU-FO7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		3A633A822405FEEC001949D8 /* MoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A633A812405FEEC001949D8 /* MoodTableViewController.swift */; };
 		3A633A842405FF01001949D8 /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A633A832405FF01001949D8 /* MoodTableViewCell.swift */; };
 		3AB187D7240620C300004A1F /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB187D6240620C300004A1F /* Mood.swift */; };
+		3ADDB511240F50B6006FFF20 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDB510240F50B6006FFF20 /* GraphViewController.swift */; };
+		3ADDB513240F5162006FFF20 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDB512240F5162006FFF20 /* ChartView.swift */; };
+		85D33FD8BE14E359BC5B2358 /* Pods_MoodTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41828F0A4CDA70A32E7D50BA /* Pods_MoodTracker.framework */; };
 		AF312EFD240B7C5300BC1C2B /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF312EFC240B7C5300BC1C2B /* ThemeHelper.swift */; };
 		AF312EFF240B7CF600BC1C2B /* String+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF312EFE240B7CF600BC1C2B /* String+UserDefaults.swift */; };
 		AF312F01240B83FA00BC1C2B /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF312F00240B83FA00BC1C2B /* ThemeSelectionViewController.swift */; };
@@ -46,6 +49,11 @@
 		3A633A812405FEEC001949D8 /* MoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewController.swift; sourceTree = "<group>"; };
 		3A633A832405FF01001949D8 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		3AB187D6240620C300004A1F /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		3ADDB510240F50B6006FFF20 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		3ADDB512240F5162006FFF20 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		41828F0A4CDA70A32E7D50BA /* Pods_MoodTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89A5CB391E3EFF3F34DEF4CF /* Pods-MoodTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.release.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.release.xcconfig"; sourceTree = "<group>"; };
+		A1C22810A10B43A0EDC07789 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AF312EFC240B7C5300BC1C2B /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeHelper.swift; path = MoodTracker/Resources/ThemeHelper.swift; sourceTree = SOURCE_ROOT; };
 		AF312EFE240B7CF600BC1C2B /* String+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UserDefaults.swift"; sourceTree = "<group>"; };
 		AF312F00240B83FA00BC1C2B /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D33FD8BE14E359BC5B2358 /* Pods_MoodTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +81,8 @@
 			children = (
 				3A633A612404D479001949D8 /* MoodTracker */,
 				3A633A602404D479001949D8 /* Products */,
+				3C723D76852712FA0584D4A1 /* Pods */,
+				5ED7E0846570E08CC5093202 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				3A633A832405FF01001949D8 /* MoodTableViewCell.swift */,
+				3ADDB512240F5162006FFF20 /* ChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,8 +160,26 @@
 				3A633A812405FEEC001949D8 /* MoodTableViewController.swift */,
 				AF312F00240B83FA00BC1C2B /* ThemeSelectionViewController.swift */,
 				C9B5AC7F240E12E600BC2E61 /* EditCommentViewController.swift */,
+				3ADDB510240F50B6006FFF20 /* GraphViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3C723D76852712FA0584D4A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1C22810A10B43A0EDC07789 /* Pods-MoodTracker.debug.xcconfig */,
+				89A5CB391E3EFF3F34DEF4CF /* Pods-MoodTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5ED7E0846570E08CC5093202 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41828F0A4CDA70A32E7D50BA /* Pods_MoodTracker.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C92F55FE240B8D49007DBB13 /* Protocols */ = {
@@ -167,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A633A732404D47B001949D8 /* Build configuration list for PBXNativeTarget "MoodTracker" */;
 			buildPhases = (
+				01D04421E5A0A1AA9C7ACA13 /* [CP] Check Pods Manifest.lock */,
 				3A633A5B2404D479001949D8 /* Sources */,
 				3A633A5C2404D479001949D8 /* Frameworks */,
 				3A633A5D2404D479001949D8 /* Resources */,
+				3CDA91607E2F9A12D16101E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +258,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01D04421E5A0A1AA9C7ACA13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoodTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CDA91607E2F9A12D16101E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A633A5B2404D479001949D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -234,6 +308,7 @@
 				3A633A632404D479001949D8 /* AppDelegate.swift in Sources */,
 				C978F60724076D9D0079DF6D /* Colors.swift in Sources */,
 				C9B5AC80240E12E600BC2E61 /* EditCommentViewController.swift in Sources */,
+				3ADDB513240F5162006FFF20 /* ChartView.swift in Sources */,
 				C92F5600240B8D67007DBB13 /* NewMoodDelegate.swift in Sources */,
 				3A633A7C2405FEAE001949D8 /* MoodPickerViewController.swift in Sources */,
 				3A633A822405FEEC001949D8 /* MoodTableViewController.swift in Sources */,
@@ -241,6 +316,7 @@
 				AF5840B02406278500952E73 /* MoodModelController.swift in Sources */,
 				3AB187D7240620C300004A1F /* Mood.swift in Sources */,
 				AF312EFD240B7C5300BC1C2B /* ThemeHelper.swift in Sources */,
+				3ADDB511240F50B6006FFF20 /* GraphViewController.swift in Sources */,
 				3A633A652404D479001949D8 /* SceneDelegate.swift in Sources */,
 				AF312F01240B83FA00BC1C2B /* ThemeSelectionViewController.swift in Sources */,
 				AF312EFF240B7CF600BC1C2B /* String+UserDefaults.swift in Sources */,
@@ -390,6 +466,7 @@
 		};
 		3A633A742404D47B001949D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1C22810A10B43A0EDC07789 /* Pods-MoodTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -408,6 +485,7 @@
 		};
 		3A633A752404D47B001949D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89A5CB391E3EFF3F34DEF4CF /* Pods-MoodTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
