@@ -51,8 +51,7 @@ class MoodModelController {
     
     //MARK: - Helper Functions
     func getDate() -> String {
-        let formatter = DateFormatter()
-        let currentDate = formatter.string(from: Date())
+        let currentDate = dateFormatter.string(from: Date())
         return currentDate
     }
     
