@@ -30,10 +30,6 @@ class MoodTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
 
-    
-    //@IBOutlet weak var addButton: UIBarButtonItem!
-    
-
     }
     
     // MARK: - Table view data source
@@ -99,14 +95,6 @@ class MoodTableViewController: UITableViewController {
     }
     
 
-    
-//    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let moodPickerVC: UIViewController = storyboard.instantiateViewController(identifier: "MoodPickerVC") as! MoodPickerViewController
-//        let navController = UINavigationController(rootViewController: moodPickerVC)
-//        present(navController, animated: true)
-//    }
-    
 }
 
 extension MoodTableViewController: AddNewMoodDelegate {

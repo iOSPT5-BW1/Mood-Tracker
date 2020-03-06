@@ -15,6 +15,14 @@ class MoodPickerViewController: UIViewController {
     
     
     @IBOutlet weak var todaysDateLabel: UILabel!
+    @IBOutlet weak var moodPickerImage: UIImageView!
+    @IBOutlet weak var angryButton: UIButton!
+    @IBOutlet weak var annoyedButton: UIButton!
+    @IBOutlet weak var sadButton: UIButton!
+    @IBOutlet weak var mehButton: UIButton!
+    @IBOutlet weak var happyButton: UIButton!
+    @IBOutlet weak var excitedButton: UIButton!
+    @IBOutlet weak var buttonContainerImage: UIImageView!
     
     var moodController: MoodModelController?
     let date = Date()
@@ -22,11 +30,12 @@ class MoodPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        moodPickerImage.moodPickerShadow(); angryButton.buttonShadow(); annoyedButton.buttonShadow(); sadButton.buttonShadow(); mehButton.buttonShadow(); happyButton.buttonShadow(); excitedButton.buttonShadow(); buttonContainerImage.moodPickerShadow()
+
         todaysDateLabel.text = moodController?.getDate()
         checkTheme()
     }
-    
 
     @IBAction func moodButtonPressed(_ sender: UIButton) {
         switch sender.tag {
