@@ -44,11 +44,6 @@ class CommentViewController: UIViewController {
         checkTheme()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        commentTextView.becomeFirstResponder()
-//    }
-    
     // MARK: IBActions
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
