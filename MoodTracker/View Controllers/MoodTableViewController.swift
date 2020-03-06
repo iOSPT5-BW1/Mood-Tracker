@@ -90,8 +90,13 @@ class MoodTableViewController: UITableViewController {
     @objc func updateTheme(notification: NSNotification) {
   
         let isLight = notification.name == light
-        let color = isLight ? UIColor.white : UIColor.darkGray
+        let color = isLight ? UIColor.white : UIColor.darkMode
         view.backgroundColor = color
+        if !isLight {
+            navigationController?.navigationBar.tintColor = .sadColor
+        } else {
+            navigationController?.navigationBar.tintColor = .blue
+        }
     }
     
 
