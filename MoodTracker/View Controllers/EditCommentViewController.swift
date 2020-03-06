@@ -54,7 +54,7 @@ class EditCommentViewController: UIViewController {
     
     func checkTheme() {
         if themeHelper.themePreference == .darkNotificationKey {
-            view.backgroundColor = .darkGray
+            view.backgroundColor = .darkMode
         }
     }
 }
