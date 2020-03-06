@@ -14,6 +14,7 @@ class QuoteViewController: UIViewController {
     //MARK: - Properties
     var mood: Mood?
     var moodController: MoodModelController?
+    let themeHelper = ThemeHelper()
     
     var quote = [Quote]() {
         didSet {
@@ -39,6 +40,7 @@ class QuoteViewController: UIViewController {
             }
             
         }
+        checkTheme()
         //Button to share the quote with others
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
@@ -55,6 +57,12 @@ class QuoteViewController: UIViewController {
         let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
+    }
+    
+    func checkTheme() {
+        if themeHelper.themePreference == .darkNotificationKey {
+            view.backgroundColor = .darkGray
+        }
     }
 
 }

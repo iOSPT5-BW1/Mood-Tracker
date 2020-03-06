@@ -18,12 +18,13 @@ class MoodPickerViewController: UIViewController {
     
     var moodController: MoodModelController?
     let date = Date()
-    let theme = ThemeSelectionViewController()
+    let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         todaysDateLabel.text = moodController?.getDate()
+        checkTheme()
     }
     
 
@@ -67,6 +68,12 @@ class MoodPickerViewController: UIViewController {
             return CommentViewController(coder: coder, mood: mood, moodController: moodController)
         }) else { fatalError("failed to load commentVC from storyboard")}
         navigationController?.pushViewController(commentVC, animated: true)
+    }
+    
+    func checkTheme() {
+        if themeHelper.themePreference == .darkNotificationKey {
+            view.backgroundColor = .darkGray
+        }
     }
 
 }

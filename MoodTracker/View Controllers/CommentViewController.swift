@@ -18,7 +18,7 @@ class CommentViewController: UIViewController {
         }
     }
     var moodController: MoodModelController
-    var theme = ThemeSelectionViewController()
+    let themeHelper = ThemeHelper()
     let light = Notification.Name(rawValue: .lightNotificationKey)
     let dark = Notification.Name(rawValue: .darkNotificationKey)
     
@@ -36,13 +36,12 @@ class CommentViewController: UIViewController {
         super.viewDidLoad()
         commentTextView.becomeFirstResponder()
         updateViews()
-        createObservers()
-
     }
     
 
     func updateViews() {
         commentTextView.text = mood.comment
+        checkTheme()
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -79,21 +78,10 @@ class CommentViewController: UIViewController {
     
     // MARK: NSNotification Observers
     
-    func createObservers() {
-        
-        //Light
-        NotificationCenter.default.addObserver(self, selector: #selector(CommentViewController.updateTheme(notification:)), name: light, object: nil)
-        
-        //Dark
-        NotificationCenter.default.addObserver(self, selector: #selector(CommentViewController.updateTheme(notification:)), name: dark, object: nil)
+    func checkTheme() {
+        if themeHelper.themePreference == .darkNotificationKey {
+            view.backgroundColor = .darkGray
+        }
     }
-    
-    @objc func updateTheme(notification: NSNotification) {
-        
-        let isLight = notification.name == light
-        let color = isLight ? UIColor.white : UIColor.darkGray
-        view.backgroundColor = color
-    }
-    
 
 }

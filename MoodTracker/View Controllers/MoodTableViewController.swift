@@ -14,10 +14,8 @@ class MoodTableViewController: UITableViewController {
     var moodModelController = MoodModelController()
     var mood: Mood?
     let themeHelper = ThemeHelper()
-    //let light = Notification.Name(rawValue: .themePreferenceKey)
-    lazy var theme = Notification.Name(rawValue: themeHelper.themePreference ?? .darkNotificationKey)
-    
-    @IBOutlet var moodTableView: UITableView!
+    let light = Notification.Name(rawValue: .lightNotificationKey)
+    let dark = Notification.Name(rawValue: .darkNotificationKey)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +26,6 @@ class MoodTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        theme = Notification.Name(rawValue: themeHelper.themePreference ?? .lightNotificationKey)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -80,7 +77,6 @@ class MoodTableViewController: UITableViewController {
             let navController = segue.destination as! UINavigationController
             let themeSelectionVC = navController.topViewController as? ThemeSelectionViewController
             themeSelectionVC?.themeHelper = themeHelper
-            //themeSelectionVC?.delegate = self
         }
     }
     
@@ -89,23 +85,17 @@ class MoodTableViewController: UITableViewController {
     func createObservers() {
         
         //Light
-        //NotificationCenter.default.addObserver(self, selector: #selector(MoodTableViewController.updateTheme(notification:)), name: theme, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MoodTableViewController.updateTheme(notification:)), name: light, object: nil)
         
         //Dark
-        NotificationCenter.default.addObserver(self, selector: #selector(MoodTableViewController.updateTheme(notification:)), name: theme, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MoodTableViewController.updateTheme(notification:)), name: dark, object: nil)
     }
     
     @objc func updateTheme(notification: NSNotification) {
-        if notification.name == theme {
-            if theme.rawValue == .darkNotificationKey {
-                view.backgroundColor = .darkGray
-            } else if theme.rawValue == .lightNotificationKey {
-                view.backgroundColor = .white
-            }
-        } else { return }
-//        let isLight = notification.name == light
-//        let color = isLight ? UIColor.white : UIColor.darkGray
-//        view.backgroundColor = color
+  
+        let isLight = notification.name == light
+        let color = isLight ? UIColor.white : UIColor.darkGray
+        view.backgroundColor = color
     }
     
 
