@@ -12,9 +12,13 @@ class ThemeSelectionViewController: UIViewController {
     
     var themeHelper: ThemeHelper?
 
+    @IBOutlet weak var darkThemeBtn: UIButton!
+    @IBOutlet weak var lightThemeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        darkThemeBtn.layer.cornerRadius = 5.0
+        lightThemeBtn.layer.cornerRadius = 5.0
 
     }
     
