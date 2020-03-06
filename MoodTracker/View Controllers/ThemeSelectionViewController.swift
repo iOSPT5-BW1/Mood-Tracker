@@ -8,28 +8,29 @@
 
 import UIKit
 
-protocol ThemeDelegate {
-    func themeSelected()
-}
-
 class ThemeSelectionViewController: UIViewController {
     
     var themeHelper: ThemeHelper?
-    var delegate: ThemeDelegate?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     @IBAction func darkThemeBtnTapped(_ sender: Any) {
         themeHelper?.setThemePreferenceToDark()
-        delegate?.themeSelected()
+        let name = Notification.Name(rawValue: themeHelper?.themePreference ?? .darkNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
         dismiss(animated: true, completion: nil)
     }
     
     
     @IBAction func whiteThemeBtnTapped(_ sender: Any) {
         themeHelper?.setThemePreferenceToWhite()
+        let name = Notification.Name(rawValue: themeHelper?.themePreference ?? .lightNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
         dismiss(animated: true, completion: nil)
     }
+    
 }

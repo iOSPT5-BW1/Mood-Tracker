@@ -12,6 +12,8 @@ class EditCommentViewController: UIViewController {
 
     @IBOutlet weak var commentTextView: UITextView!
     
+    let themeHelper = ThemeHelper()
+    
     init?(coder: NSCoder, mood: Mood, moodController: MoodModelController) {
            self.mood = mood
            self.moodController = moodController
@@ -47,5 +49,12 @@ class EditCommentViewController: UIViewController {
     
     func updateView() {
         commentTextView.text = mood.comment
+        checkTheme()
+    }
+    
+    func checkTheme() {
+        if themeHelper.themePreference == .darkNotificationKey {
+            view.backgroundColor = .darkGray
+        }
     }
 }

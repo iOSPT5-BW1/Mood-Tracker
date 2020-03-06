@@ -9,6 +9,10 @@
 import UIKit
 
 class MoodPickerViewController: UIViewController {
+    func themeSelected(color: UIColor) {
+        view.backgroundColor = color
+    }
+    
     
     @IBOutlet weak var todaysDateLabel: UILabel!
     @IBOutlet weak var moodPickerImage: UIImageView!
@@ -22,11 +26,15 @@ class MoodPickerViewController: UIViewController {
     
     var moodController: MoodModelController?
     let date = Date()
+    let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         moodPickerImage.moodPickerShadow(); angryButton.buttonShadow(); annoyedButton.buttonShadow(); sadButton.buttonShadow(); mehButton.buttonShadow(); happyButton.buttonShadow(); excitedButton.buttonShadow(); buttonContainerImage.moodPickerShadow()
+
         todaysDateLabel.text = moodController?.getDate()
+        checkTheme()
     }
 
     @IBAction func moodButtonPressed(_ sender: UIButton) {
@@ -69,6 +77,12 @@ class MoodPickerViewController: UIViewController {
             return CommentViewController(coder: coder, mood: mood, moodController: moodController)
         }) else { fatalError("failed to load commentVC from storyboard")}
         navigationController?.pushViewController(commentVC, animated: true)
+    }
+    
+    func checkTheme() {
+        if themeHelper.themePreference == .darkNotificationKey {
+            view.backgroundColor = .darkGray
+        }
     }
 
 }

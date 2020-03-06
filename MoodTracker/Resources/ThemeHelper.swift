@@ -23,10 +23,10 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToDark() {
-        UserDefaults.standard.set("Dark", forKey: .themePreferenceKey)
+        UserDefaults.standard.set(String.darkNotificationKey, forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToWhite() {
-        UserDefaults.standard.set("White", forKey: .themePreferenceKey)
+        UserDefaults.standard.set(String.lightNotificationKey, forKey: .themePreferenceKey)
     }
 }
