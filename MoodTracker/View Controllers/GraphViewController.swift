@@ -63,7 +63,8 @@ class GraphViewController: UIViewController {
         numberOfMoodDataEntries = [angryData, happyData, sadData, excitedData, annoyedData, mehData]
         
         updateChartData()
-      
+        chartView.holeRadiusPercent = 0.3
+        chartView.data?.setValueTextColor(.black)
     }
     
     //MARK: - Functions
