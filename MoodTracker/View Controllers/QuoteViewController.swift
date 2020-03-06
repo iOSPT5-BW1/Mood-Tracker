@@ -26,6 +26,7 @@ class QuoteViewController: UIViewController {
     
     //MARK: - IBOutlet
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var trackingBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -40,6 +41,7 @@ class QuoteViewController: UIViewController {
             }
             
         }
+        trackingBtn.layer.cornerRadius = 5.0
         checkTheme()
         //Button to share the quote with others
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
