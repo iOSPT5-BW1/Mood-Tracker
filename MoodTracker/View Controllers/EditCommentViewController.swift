@@ -11,6 +11,8 @@ import UIKit
 class EditCommentViewController: UIViewController {
 
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var updateBtn: UIButton!
+    @IBOutlet weak var clearTxtBtn: UIButton!
     
     let themeHelper = ThemeHelper()
     
@@ -24,6 +26,7 @@ class EditCommentViewController: UIViewController {
            fatalError("must create VC with a mood")
        }
     
+    
     var mood: Mood {
         didSet {
             updateView()
@@ -35,6 +38,8 @@ class EditCommentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        clearTxtBtn.layer.cornerRadius = 5.0
+        updateBtn.layer.cornerRadius = 5.0
     }
     
     @IBAction func clearTextBtnPressed(_ sender: Any) {

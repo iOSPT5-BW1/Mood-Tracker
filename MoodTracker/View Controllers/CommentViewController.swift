@@ -22,6 +22,11 @@ class CommentViewController: UIViewController {
     let light = Notification.Name(rawValue: .lightNotificationKey)
     let dark = Notification.Name(rawValue: .darkNotificationKey)
     
+    // MARK: IBOutlets
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    
+    
     init?(coder: NSCoder, mood: Mood, moodController: MoodModelController) {
         self.mood = mood
         self.moodController = moodController
@@ -36,6 +41,8 @@ class CommentViewController: UIViewController {
         super.viewDidLoad()
         commentTextView.becomeFirstResponder()
         updateViews()
+        cancelBtn.layer.cornerRadius = 5.0
+        saveBtn.layer.cornerRadius = 5.0
     }
     
 
