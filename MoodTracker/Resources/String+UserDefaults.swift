@@ -12,4 +12,5 @@ extension String {
     static let themePreferenceKey = "ThemePreferenceKey"
     static let lightNotificationKey = "jmm.lightMode"
     static let darkNotificationKey = "jmm.darkMode"
+    static let moodAddedNotificationKey = "clm.moodAdded"
 }
