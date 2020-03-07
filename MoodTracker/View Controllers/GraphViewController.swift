@@ -122,6 +122,7 @@ class GraphViewController: UIViewController {
     }
     
     @objc func deleteData(notification: NSNotification) {
+        let moodController = notification.object as! MoodModelController
         
         angryData.value = 0
         happyData.value = 0
@@ -130,7 +131,27 @@ class GraphViewController: UIViewController {
         annoyedData.value = 0
         mehData.value = 0
         
-        buildChart()
+        for i in 0..<moodController.moods.count {
+            let singleMood = moodController.moods[i]
+            switch singleMood.emotion.state.rawValue {
+            case "angry":
+                angryData.value += 1
+            case "happy":
+                happyData.value += 1
+            case "sad":
+                sadData.value += 1
+            case "excited":
+                excitedData.value += 1
+            case "annoyed":
+                annoyedData.value += 1
+            case "meh":
+                mehData.value += 1
+            default:
+                print("Data not found")
+            }
+        }
+        numberOfMoodDataEntries = [angryData, happyData, sadData, excitedData, annoyedData, mehData]
+        updateChartData()
     }
     
 }

@@ -10,13 +10,12 @@ import UIKit
 
 class MoodTableViewController: UITableViewController {
     
-    
     var moodModelController = MoodModelController()
     var mood: Mood?
     let themeHelper = ThemeHelper()
     let light = Notification.Name(rawValue: .lightNotificationKey)
     let dark = Notification.Name(rawValue: .darkNotificationKey)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         moodModelController.newMoodDelegate = self
@@ -29,7 +28,7 @@ class MoodTableViewController: UITableViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-
+        
     }
     
     // MARK: - Table view data source
@@ -49,22 +48,22 @@ class MoodTableViewController: UITableViewController {
         if editingStyle == .delete {
             let mood = moodModelController.moods[indexPath.row]
             moodModelController.deleteMood(moodToDelete: mood)
-
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         let moodToUpdate = moodModelController.moods[indexPath.row]
-         guard let commentVC = storyboard?.instantiateViewController(identifier: "EditCommentVC", creator: { coder in
-             return EditCommentViewController(coder: coder, mood: moodToUpdate, moodController: self.moodModelController)
-         }) else { fatalError("failed to load commentVC from storyboard")}
+        let moodToUpdate = moodModelController.moods[indexPath.row]
+        guard let commentVC = storyboard?.instantiateViewController(identifier: "EditCommentVC", creator: { coder in
+            return EditCommentViewController(coder: coder, mood: moodToUpdate, moodController: self.moodModelController)
+        }) else { fatalError("failed to load commentVC from storyboard")}
         navigationController?.pushViewController(commentVC, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if segue.identifier == "MoodPickerSegue" {
             let navController = segue.destination as! UINavigationController
             let moodPickerVC = navController.topViewController as? MoodPickerViewController
@@ -77,9 +76,7 @@ class MoodTableViewController: UITableViewController {
     }
     
     // MARK: NSNotification Observers
-    
     func createObservers() {
-        
         //Light
         NotificationCenter.default.addObserver(self, selector: #selector(MoodTableViewController.updateTheme(notification:)), name: light, object: nil)
         
@@ -88,7 +85,7 @@ class MoodTableViewController: UITableViewController {
     }
     
     @objc func updateTheme(notification: NSNotification) {
-  
+        
         let isLight = notification.name == light
         let color = isLight ? UIColor.white : UIColor.darkMode
         view.backgroundColor = color
@@ -98,12 +95,9 @@ class MoodTableViewController: UITableViewController {
             navigationController?.navigationBar.tintColor = .blue
         }
     }
-    
-
 }
 
 extension MoodTableViewController: AddNewMoodDelegate {
-    
     func updateWithNewMood() {
         tableView.reloadData()
     }

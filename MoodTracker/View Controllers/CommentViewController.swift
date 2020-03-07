@@ -32,7 +32,7 @@ class CommentViewController: UIViewController {
         self.moodController = moodController
         super.init(coder: coder)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("must create VC with a mood")
     }
@@ -45,7 +45,7 @@ class CommentViewController: UIViewController {
         saveBtn.layer.cornerRadius = 5.0
     }
     
-
+    
     func updateViews() {
         commentTextView.text = mood.comment
         checkTheme()
@@ -69,7 +69,7 @@ class CommentViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CommentQuoteSegue" {
             guard let quoteVC = segue.destination as? QuoteViewController else { return }
@@ -85,5 +85,5 @@ class CommentViewController: UIViewController {
             view.backgroundColor = .darkMode
         }
     }
-
+    
 }

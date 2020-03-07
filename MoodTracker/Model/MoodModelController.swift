@@ -35,6 +35,7 @@ class MoodModelController {
         
         moods.append(newMood)
         saveToPersistentStore()
+        
         //Let the post know there was a new mood added
         let moodName = Notification.Name(rawValue: .moodAddedNotificationKey)
         NotificationCenter.default.post(name: moodName, object: self)
@@ -48,6 +49,7 @@ class MoodModelController {
                 print ("mood could not be found")
             }
             saveToPersistentStore()
+            
             //Notification of mood deleted
             let moodDeletedName = Notification.Name(rawValue: .moodDeletedNotificationKey)
             NotificationCenter.default.post(name: moodDeletedName, object: self)
