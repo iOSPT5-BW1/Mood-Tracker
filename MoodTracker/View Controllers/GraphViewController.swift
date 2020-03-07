@@ -12,7 +12,7 @@ import Charts
 class GraphViewController: UIViewController {
 
     //MARK: - Properties
-    var moodModelController = MoodModelController()
+    var moodModelController = MoodModelController() 
     
     var angryData = PieChartDataEntry(value: 0)
     var happyData = PieChartDataEntry(value: 0)
@@ -23,21 +23,21 @@ class GraphViewController: UIViewController {
     
     var numberOfMoodDataEntries = [PieChartDataEntry]()
     
+    let moodName = Notification.Name(rawValue: .moodAddedNotificationKey
+    
+    )
     //MARK: - IBOutlets
     @IBOutlet var chartView: PieChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createObserver()
         buildChart()
-        chartView.reloadInputViews()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
     
     //MARK: - Functions
     func buildChart() {
@@ -88,6 +88,37 @@ class GraphViewController: UIViewController {
         
         chartView.data = chartData
         chartView.data?.setValueTextColor(.black)
+    }
+    
+    func createObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(GraphViewController.updateChart(notification:)), name: moodName, object: nil)
+    }
+    
+    @objc func updateChart(notification: NSNotification){
+        let moodController = notification.object as! MoodModelController
+        print(moodController.moods)
+        let lastMood = moodController.moods.last
+        print(lastMood)
+        switch lastMood!.emotion.state.rawValue {
+        case "angry":
+            angryData.value += 1
+        case "happy":
+            happyData.value += 1
+        case "sad":
+            sadData.value += 1
+        case "excited":
+            excitedData.value += 1
+        case "annoyed":
+            annoyedData.value += 1
+        case "meh":
+            mehData.value += 1
+        default:
+            print("Data not found")
+        }
+        
+        numberOfMoodDataEntries = [angryData, happyData, sadData, excitedData, annoyedData, mehData]
+        
+        updateChartData()
     }
 
 }
