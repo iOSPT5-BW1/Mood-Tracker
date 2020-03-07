@@ -32,12 +32,4 @@ class MoodTableViewCell: UITableViewCell {
         dateLabel.text = mood.dateString
         commentLabel.text = mood.comment
     }
-
-    
-    //MARK: IBActions
-    @IBAction func editButtonTapped(_ sender: Any) {
-        
-    }
-    
-
 }

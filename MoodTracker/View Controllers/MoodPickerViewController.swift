@@ -13,7 +13,6 @@ class MoodPickerViewController: UIViewController {
         view.backgroundColor = color
     }
     
-    
     @IBOutlet weak var todaysDateLabel: UILabel!
     @IBOutlet weak var moodPickerImage: UIImageView!
     @IBOutlet weak var angryButton: UIButton!

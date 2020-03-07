@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct QuoteRequest {
     let API_KEY = APIKey()
     let motivationalURL = URL(string: "https://healthruwords.p.rapidapi.com/v1/quotes/?maxR=1&size=large")

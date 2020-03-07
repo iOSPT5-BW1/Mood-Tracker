@@ -6,7 +6,6 @@
 //  Copyright © 2020 thecoderpilot. All rights reserved.
 //
 
-
 import UIKit
 
 class QuoteViewController: UIViewController {
@@ -18,11 +17,11 @@ class QuoteViewController: UIViewController {
     
     var quote = [Quote]() {
         didSet {
-               let url = URL(string: self.quote[0].media)
-               self.imageView.downloadImage(from: url!)
+            let url = URL(string: self.quote[0].media)
+            self.imageView.downloadImage(from: url!)
         }
     }
-
+    
     
     //MARK: - IBOutlet
     @IBOutlet var imageView: UIImageView!
@@ -66,23 +65,23 @@ class QuoteViewController: UIViewController {
             view.backgroundColor = .darkMode
         }
     }
-
+    
 }
 
 //MARK: - Extension
 extension UIImageView {
-   func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-      URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-   }
-   func downloadImage(from url: URL) {
-      getData(from: url) {
-         data, response, error in
-         guard let data = data, error == nil else {
-            return
-         }
-         DispatchQueue.main.async() {
-            self.image = UIImage(data: data)
-         }
-      }
-   }
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    func downloadImage(from url: URL) {
+        getData(from: url) {
+            data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            DispatchQueue.main.async() {
+                self.image = UIImage(data: data)
+            }
+        }
+    }
 }
