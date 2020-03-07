@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class MoodTableViewController: UITableViewController {
     
@@ -20,6 +21,16 @@ class MoodTableViewController: UITableViewController {
         super.viewDidLoad()
         moodModelController.newMoodDelegate = self
         createObservers()
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Yay!!")
+            } else {
+                print("Boo")
+            }
+        }
+        scheduleNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,6 +106,29 @@ class MoodTableViewController: UITableViewController {
             navigationController?.navigationBar.tintColor = .blue
         }
     }
+    
+    func scheduleNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "How's your day so far?"
+        content.body = "Track your mood for today and leave yourself a comment."
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = 10
+        dateComponents.minute = 30
+        let trigger10Secs = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            //Use this trigger for daily notifications and the dateComponents to change the time.
+//        let dailyTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger10Secs)
+        
+        center.add(request) { (error) in
+            
+        }
+    }
+    
 }
 
 extension MoodTableViewController: AddNewMoodDelegate {
