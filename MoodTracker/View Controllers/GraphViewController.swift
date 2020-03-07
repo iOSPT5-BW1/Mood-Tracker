@@ -10,7 +10,7 @@ import UIKit
 import Charts
 
 class GraphViewController: UIViewController {
-
+    
     //MARK: - Properties
     var moodModelController = MoodModelController() 
     
@@ -23,9 +23,9 @@ class GraphViewController: UIViewController {
     
     var numberOfMoodDataEntries = [PieChartDataEntry]()
     
-    let moodName = Notification.Name(rawValue: .moodAddedNotificationKey
+    let moodName = Notification.Name(rawValue: .moodAddedNotificationKey)
+    let moodDeletedName = Notification.Name(rawValue: .moodDeletedNotificationKey)
     
-    )
     //MARK: - IBOutlets
     @IBOutlet var chartView: PieChartView!
     
@@ -80,11 +80,11 @@ class GraphViewController: UIViewController {
         let chartData = PieChartData(dataSet: chartDataSet)
         
         chartDataSet.colors = [UIColor(red: 255/255, green: 212/255, blue: 212/255, alpha: 1),
-                      UIColor(red: 161/255, green: 245/255, blue: 192/255, alpha: 1),
-                      UIColor(red: 202/255, green: 224/255, blue: 245/255, alpha: 1),
-                      UIColor(red: 255/255, green: 246/255, blue: 165/255, alpha: 1),
-                      UIColor(red: 255/255, green: 212/255, blue: 151/255, alpha: 1),
-                      UIColor(red: 196/255, green: 169/255, blue: 158/255, alpha: 1)]
+                               UIColor(red: 161/255, green: 245/255, blue: 192/255, alpha: 1),
+                               UIColor(red: 202/255, green: 224/255, blue: 245/255, alpha: 1),
+                               UIColor(red: 255/255, green: 246/255, blue: 165/255, alpha: 1),
+                               UIColor(red: 255/255, green: 212/255, blue: 151/255, alpha: 1),
+                               UIColor(red: 196/255, green: 169/255, blue: 158/255, alpha: 1)]
         
         chartView.data = chartData
         chartView.data?.setValueTextColor(.black)
@@ -92,13 +92,14 @@ class GraphViewController: UIViewController {
     
     func createObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(GraphViewController.updateChart(notification:)), name: moodName, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(GraphViewController.deleteData(notification:)), name: moodDeletedName, object: nil)
     }
     
-    @objc func updateChart(notification: NSNotification){
+    @objc func updateChart(notification: NSNotification) {
         let moodController = notification.object as! MoodModelController
-        print(moodController.moods)
         let lastMood = moodController.moods.last
-        print(lastMood)
+        
         switch lastMood!.emotion.state.rawValue {
         case "angry":
             angryData.value += 1
@@ -117,8 +118,19 @@ class GraphViewController: UIViewController {
         }
         
         numberOfMoodDataEntries = [angryData, happyData, sadData, excitedData, annoyedData, mehData]
-        
         updateChartData()
     }
-
+    
+    @objc func deleteData(notification: NSNotification) {
+        
+        angryData.value = 0
+        happyData.value = 0
+        sadData.value = 0
+        excitedData.value = 0
+        annoyedData.value = 0
+        mehData.value = 0
+        
+        buildChart()
+    }
+    
 }

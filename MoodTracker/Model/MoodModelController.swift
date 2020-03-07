@@ -48,6 +48,9 @@ class MoodModelController {
                 print ("mood could not be found")
             }
             saveToPersistentStore()
+            //Notification of mood deleted
+            let moodDeletedName = Notification.Name(rawValue: .moodDeletedNotificationKey)
+            NotificationCenter.default.post(name: moodDeletedName, object: self)
         }
     }
     
